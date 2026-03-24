@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Instagram, Youtube, Linkedin, Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
+import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
+import { InstagramIcon, YoutubeIcon, LinkedinIcon } from './SocialIcons';
 import { REGISTRATION_LINK } from '../../constants';
 
 const Footer = () => {
@@ -17,9 +18,9 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: 'Instagram', icon: Instagram, href: 'https://instagram.com' },
-    { name: 'YouTube', icon: Youtube, href: 'https://youtube.com' },
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com' },
+    { name: 'Instagram', icon: InstagramIcon, href: 'https://instagram.com' },
+    { name: 'YouTube', icon: YoutubeIcon, href: 'https://youtube.com' },
+    { name: 'LinkedIn', icon: LinkedinIcon, href: 'https://linkedin.com' },
   ];
 
   return (
