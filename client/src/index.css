@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 4%;
+    --primary: 357 93% 47%;
+    --primary-foreground: 0 0% 100%;
+  }
+
+  html, body {
+    @apply overflow-x-hidden w-full m-0 p-0 max-w-[100vw];
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased font-sans flex flex-col min-h-screen selection:bg-primary selection:text-white;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-black/5;
+  }
+}
+
+/* Base Red Tint Background */
+body {
+  background-image: radial-gradient(circle at top right, rgba(255,0,0,0.02), transparent 40%),
+                    radial-gradient(circle at bottom left, rgba(255,0,0,0.02), transparent 40%);
+  background-attachment: fixed;
+}
+
+/* Force zero shadows globally */
+* {
+  box-shadow: none !important;
+}
+
+/* Micro Interactions (Links & Navbar) */
+.hover-underline {
+  @apply relative inline-block;
+}
+.hover-underline::after {
+  content: '';
+  @apply absolute left-0 bottom-[-2px] w-full h-[2px] bg-primary origin-bottom-right scale-x-0 transition-transform duration-300 ease-out;
+}
+.hover-underline:hover::after,
+.group:hover .hover-underline::after {
+  @apply origin-bottom-left scale-x-100;
+}
+
+.nav-link {
+  @apply transition-transform duration-300 hover:-translate-y-0.5 inline-block;
+}
+
+/* Button Interactions */
+.btn-primary {
+  @apply relative overflow-hidden transition-all duration-300 transform active:scale-95 will-change-transform;
+}
+.btn-primary::after {
+  content: '';
+  @apply absolute inset-0 bg-white/20 opacity-0 transition-opacity duration-300 pointer-events-none;
+}
+.btn-primary:active::after,
+.btn-primary:hover::after {
+  @apply opacity-100;
+}
+
+/* Smooth Scrolling globally */
+html {
+  scroll-behavior: smooth;
+}
