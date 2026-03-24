@@ -62,56 +62,56 @@ const Events = () => {
 
   const allEvents = [
     {
-      title: "Exhibition — Day 1",
-      category: "Exhibition",
-      description: "Showcase of innovative student projects and early-stage prototypes.",
+      title: "Exhibition — Phase 1",
+      category: "Innovation",
+      description: "Initial showcase of diverse technical projects and student-led prototypes.",
       image: null
     },
     {
-      title: "Exhibition — Day 2",
-      category: "Exhibition",
-      description: "Advanced demonstrations and deeper evaluation by mentors and experts.",
+      title: "Exhibition — Phase 2",
+      category: "Innovation",
+      description: "Advanced project demonstrations and technical evaluation by industry mentors.",
       image: null
     },
     {
-      title: "Exhibition — Day 3",
-      category: "Exhibition",
-      description: "Final showcase of top projects competing for recognition and rewards.",
+      title: "The Grand Finale",
+      category: "Innovation",
+      description: "Final presentation of top-tier technical solutions competing for key awards.",
       image: null
     },
     {
-      title: "Reel Making Competition",
+      title: "Dev Showcase",
       category: "Content",
-      description: "Create engaging and impactful reels around the theme of Money Mystery.",
+      description: "Create high-impact technical demos and project walk-throughs.",
       image: null
     },
     {
-      title: "Influencer Clash",
+      title: "Tech Influencer",
       category: "Content",
-      description: "Compete to drive the highest engagement and promote Prayogam across social platforms.",
+      description: "Strategic sharing of technical insights and development journeys.",
       image: null
     },
     {
-      title: "Secret Code",
+      title: "The Code Enigma",
       category: "Tech",
-      description: "Solve hidden clues and crack encrypted challenges across the event.",
+      description: "Solve complex technical sequences and logic-based development puzzles.",
       image: null
     },
     {
-      title: "Decode The Code",
+      title: "Debug Challenge",
       category: "Tech",
-      description: "A fast-paced coding and logic challenge designed to test problem-solving skills.",
+      description: "A rapid-fire technical challenge testing debugging and architecture skills.",
       image: null
     },
-    { title: "Spot & Post", category: "Fun", description: "Spot the mystery and post your evidence to win.", isFun: true },
-    { title: "Photo & Reel Booth", category: "Fun", description: "Capture the mystery at our high-tech photobooth.", isFun: true },
-    { title: "Spin the Wheel", category: "Fun", description: "Test your luck at the Vault and win instant prizes.", isFun: true },
-    { title: "Rapid Fire Quiz", category: "Fun", description: "Speed, accuracy, and quick thinking win the game.", isFun: true },
-    { title: "Stand If Game", category: "Fun", description: "The ultimate survival game of presence and poise.", isFun: true },
-    { title: "Choose Your Side", category: "Fun", description: "Debate and decide in this high-energy audience game.", isFun: true },
-    { title: "Question (5 Answers)", category: "Fun", description: "One question, five required answers. Can you do it?", isFun: true },
-    { title: "Guess the Price", category: "Fun", description: "Estimate the value of premium tech assets accurately.", isFun: true },
-    { title: "Open Mic", category: "Fun", description: "The stage is yours. Share your talent with the system.", isFun: true }
+    { title: "Innovation Hunt", category: "Fun", description: "Spot the most creative features across the exhibition.", isFun: true },
+    { title: "Tech Capture", category: "Fun", description: "Document your tech exhibition experience at the photobooth.", isFun: true },
+    { title: "Spin the Tech-Wheel", category: "Fun", description: "Test your luck for instant tech-related rewards.", isFun: true },
+    { title: "Logic Quiz", category: "Fun", description: "Speed, precision, and technical knowledge determine the winner.", isFun: true },
+    { title: "Dev Survival", category: "Fun", description: "A high-stakes game of technical focus and focus.", isFun: true },
+    { title: "The Tech Debate", category: "Fun", description: "Decide the future of tech in this high-energy audience battle.", isFun: true },
+    { title: "Rapid Code", category: "Fun", description: "One requirement, five required outputs. Implement it fast.", isFun: true },
+    { title: "Tech Valuation", category: "Fun", description: "Estimate the potential impact of technical innovations.", isFun: true },
+    { title: "Open Stage", category: "Fun", description: "The stage is yours. Share your development talent with the community.", isFun: true }
   ];
 
   const categories = ['All', ...new Set(allEvents.map(e => e.category))];
@@ -125,10 +125,10 @@ const Events = () => {
       
       {/* PAGE HEADER */}
       <div className="text-center mb-16">
-        <AnimatedText text="EVENTS" el="h1" className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter mb-4 uppercase" />
+        <AnimatedText text="TECHNICAL EXHIBITIONS" el="h1" className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter mb-4 uppercase" />
         <AnimatedSection direction="up" delay={0.2}>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-medium uppercase tracking-wide">
-            Explore the full lineup of competitions and challenges.
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-medium uppercase tracking-widest italic">
+            "Explore the full range of innovative project challenges."
           </p>
         </AnimatedSection>
       </div>
@@ -139,9 +139,9 @@ const Events = () => {
         className="max-w-4xl mx-auto mb-16 bg-red-50/50 border border-primary/20 p-8 rounded-3xl text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6"
       >
         <div>
-          <h3 className="font-black text-xl text-primary uppercase tracking-tight mb-1">Entry via Pass Only</h3>
+          <h3 className="font-black text-xl text-primary uppercase tracking-tight mb-1">Registration Access</h3>
           <p className="text-foreground font-medium text-sm">
-            To participate in these events, you must secure your <span className="font-bold text-primary">Transaction File Pass</span>.
+            To participate in these sessions, you must complete your <span className="font-bold text-primary italic uppercase">Project Submission Entry</span>.
           </p>
         </div>
         <a href={REGISTRATION_LINK} target="_blank" rel="noopener noreferrer" className="shrink-0 block w-full sm:w-auto text-center bg-primary text-white font-bold py-4 px-10 rounded-full shadow-glow hover:bg-black transition-all uppercase tracking-widest text-sm">

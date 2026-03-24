@@ -29,21 +29,21 @@ const PrizeCard = ({ title, amount, description, icon: Icon, color = "primary" }
 const Prizes = () => {
   const mainPrizes = [
     {
-      title: "The Ultimate Vault Breaker",
+      title: "The Ultimate Innovator",
       amount: "₹2,50,000",
-      description: "Awarded to the team with the most innovative and impactful solution in the flagship hackathon.",
+      description: "Awarded to the team with the most technically sophisticated and impactful project in the exhibition.",
       icon: Trophy
     },
     {
-      title: "Innovation Consortium",
+      title: "Technical Excellence",
       amount: "₹1,50,000",
-      description: "Recognition for the most scalable and technically sound project demonstrating market potential.",
+      description: "Recognition for superior technical depth, architecture, and system design.",
       icon: Award
     },
     {
-      title: "Fintech Excellence",
+      title: "Emerging Tech Award",
       amount: "₹1,00,000",
-      description: "Awarded to the project that best solves a critical problem in the financial technology sector.",
+      description: "Awarded to the most promising application of emerging technologies like AI/ML or Blockchain (technical focus).",
       icon: Crown
     }
   ];
@@ -68,8 +68,8 @@ const Prizes = () => {
           <div className="text-5xl md:text-8xl font-black text-foreground tracking-tighter mb-8 tabular-nums">
             ₹5,00,000
           </div>
-          <p className="text-base sm:text-lg md:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed font-medium">
-            Rewarding the minds that decode the future. High-stakes incentives for the creators of tomorrow.
+          <p className="text-base sm:text-lg md:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed font-medium italic">
+            "Recognizing the minds that build the future. High-impact rewards for technical excellence."
           </p>
         </AnimatedSection>
       </div>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Megaphone, Calendar, MapPin, Bell, Plus, Minus } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import AnimatedSection from '../components/animations/AnimatedSection';
 import AnimatedText from '../components/animations/AnimatedText';
 
@@ -84,62 +85,62 @@ const Announcements = () => {
   const announcements = [
     {
       icon: Megaphone,
-      title: "Registrations Open",
-      content: "Secure your Transaction File Pass now. Registrations are live on Luma.",
-      date: "Active Now"
+      title: "Pass Registration",
+      content: "Pass registrations will open soon. Stay tuned to secure your entry for Prayogam 2k26.",
+      date: "REGISTRATIONS OPEN SOON"
     },
     {
       icon: Calendar,
       title: "Important Dates",
-      content: "Final Event: 18 April 2026. Mark your calendars for the ultimate tech-cultural convergence.",
+      content: "Final Event Day: 18 April 2026. Be ready to showcase, explore, and experience.",
       date: "18 April 2026"
     },
     {
       icon: MapPin,
-      title: "Venue Update",
-      content: "Poornima University, Sitapura Extension, Jaipur. The arena is being prepared for the system.",
+      title: "Venue Details",
+      content: "Poornima University, Sitapura Extension, Jaipur.",
       date: "Confirmed"
     },
     {
       icon: Bell,
       title: "Event Updates",
-      content: "New high-stakes competitions and cultural activities have been added to the schedule. Check the Events page for details.",
-      date: "New"
+      content: "New competitions and activities have been added. Check the Events page for details.",
+      date: "Latest"
     }
   ];
 
   const faqs = [
     {
-      q: "How do I register for Prayogam 2k26?",
-      a: "You can register by securing your Transaction File Pass through the official registration link."
+      q: "How can I get a pass for Prayogam 2k26?",
+      a: "Passes will be available through our official registration link once the portal opens. Stay tuned for the announcement."
     },
     {
-      q: "Do I need a pass to participate in events?",
-      a: "Yes, all participants must have a valid Transaction File Pass to access events and competitions."
+      q: "Is registration required to attend the event?",
+      a: "Yes, every attendee must have a valid registration pass to enter the venue and participate in activities."
     },
     {
-      q: "Where do I register?",
-      a: "Use this official link: https://luma.com/tqtln2i2"
+      q: "Where will the registration form be available?",
+      a: "The registration link will be updated here and on our official social media handles as soon as it goes live."
     },
     {
-      q: "Can I attend without registering?",
-      a: "No, entry is restricted to registered participants only."
+      q: "Can I attend without a pass?",
+      a: "No, entries are restricted to pass holders only to ensure a smooth experience for everyone."
     },
     {
-      q: "What exactly is the “Money Mystery” theme?",
-      a: "The theme revolves around modern finance, blockchain, cybersecurity, and hidden systems that drive global wealth. Expect challenges that combine technology, strategy, and problem-solving."
+      q: "What should I bring for the event?",
+      a: "Carry a digital or printed copy of your pass and a valid student ID card. For technical activities, bringing your own laptop is recommended."
     },
     {
-      q: "Do I need to bring my own laptop or equipment?",
-      a: "Yes, participants are expected to bring their own laptops and any required tools for competitions, especially for hackathons and technical events."
+      q: "Can I participate in multiple activities?",
+      a: "Absolutely! You can explore and participate in various exhibitions, quizzes, and Fun Zone activities throughout the day."
     },
     {
-      q: "Can I participate in multiple events?",
-      a: "Yes, you can register for multiple events as long as their schedules do not clash."
+      q: "Will I get updates after registration?",
+      a: "Yes, once you register, you will receive all important notifications and event details via your registered email."
     },
     {
-      q: "How will I receive updates after registering?",
-      a: "All important updates will be shared via email and official communication channels, so make sure to provide accurate contact details during registration."
+      q: "Who can attend Prayogam 2k26?",
+      a: "The event is open to all students, tech enthusiasts, and innovators looking to explore the latest technical projects."
     }
   ];
 
@@ -149,7 +150,7 @@ const Announcements = () => {
         
         <div className="text-center mb-16 px-4">
           <AnimatedText 
-            text="Announcements & Updates" 
+            text="ANNOUNCEMENTS & UPDATES" 
             el="h1" 
             className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tighter mb-4 md:whitespace-nowrap" 
           />
@@ -202,10 +203,10 @@ const Announcements = () => {
           className="text-center mt-20"
         >
           <p className="text-gray-500 font-medium mb-4">Still have unanswered questions?</p>
-          <a href="mailto:hod.1year@poornima.edu.in" className="inline-flex flex-col items-center group">
+          <Link to="/contact" className="inline-flex flex-col items-center group">
             <span className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">Contact Support Team</span>
             <div className="w-1/2 h-0.5 bg-primary group-hover:w-full transition-all duration-300 mt-1 shadow-glow" />
-          </a>
+          </Link>
         </motion.div>
 
       </div>

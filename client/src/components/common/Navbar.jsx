@@ -39,7 +39,7 @@ const Navbar = () => {
             <img 
               src="/logo-new.png" 
               alt="Prayogam 2k26" 
-              className="h-[40px] md:h-[50px] w-auto object-contain transition-transform duration-300 group-hover:scale-[1.05]"
+              className="h-[50px] md:h-[65px] lg:h-[75px] w-auto transition-all duration-500 hover:scale-105" 
             />
           </button>
         </Link>

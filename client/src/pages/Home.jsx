@@ -66,7 +66,7 @@ const Home = () => {
             </span>
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-10 max-w-2xl leading-relaxed">
-            Welcome to Prayogam 2k26 — where technology meets high-stakes finance. Step into a system built for innovators, risk-takers, and creators.
+            Welcome to Prayogam 2k26 — a premier tech project exhibition. A platform for innovators, developers, and creators to showcase the future of technology.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 pointer-events-auto">
@@ -74,10 +74,10 @@ const Home = () => {
               Register Now
             </a>
             <a href="/events" className="block text-center bg-white border-2 border-foreground text-foreground px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-50 hover:-translate-y-1 transition-all w-full sm:w-auto">
-              Explore Events
+              View Projects
             </a>
           </div>
-          <p className="text-gray-400 text-sm mt-4 font-medium sm:mt-3 text-center sm:text-left">Secure your pass to enter the system.</p>
+          <p className="text-gray-400 text-[10px] uppercase tracking-[0.2em] mt-5 font-bold sm:mt-4 text-center sm:text-left">The ultimate stage for technical excellence.</p>
         </motion.div>
         
         {/* Decorative elements */}
@@ -101,10 +101,10 @@ const Home = () => {
           className="text-center"
         >
           <h2 className="text-4xl md:text-6xl font-black tracking-tight text-gray-300">
-            THIS IS NOT JUST AN EVENT.
+            THIS IS NOT JUST AN EXHIBITION.
           </h2>
           <h2 className="text-4xl md:text-6xl font-black tracking-tight text-foreground mt-2">
-            IT'S A <span className="text-primary italic">SYSTEM.</span>
+            IT'S AN <span className="text-primary italic px-2">INNOVATION HUB.</span>
           </h2>
         </motion.div>
       </section>
@@ -119,7 +119,7 @@ const Home = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <div className="absolute bottom-6 left-6 z-10">
-            <span className="text-white text-xs font-bold tracking-widest uppercase bg-primary px-3 py-1 rounded-full">Secure Vault Access</span>
+            <span className="text-white text-xs font-bold tracking-widest uppercase bg-primary px-4 py-1.5 rounded-full shadow-lg">Innovation Showcase</span>
           </div>
         </AnimatedSection>
 
@@ -128,17 +128,17 @@ const Home = () => {
             <div className="w-12 h-1 bg-primary mb-6" />
             <h2 className="text-4xl font-black tracking-tighter mb-4 text-foreground uppercase">What is Prayogam 2k26?</h2>
             <p className="text-xl text-gray-600 leading-relaxed font-medium">
-              We are decoding the architecture of modern wealth. From algorithmic trading to blockchain security, Prayogam 2k26 dives deep into the technology powering the global financial ecosystem.
+              Prayogam is the flagship technical project exhibition where ideas transform into impact. From AI-driven solutions to advanced web architectures, we showcase the top technical innovations from the next generation of engineers.
             </p>
           </div>
           
           <div className="space-y-4 pt-6 border-t border-border">
-            <h3 className="text-xl font-bold">What You Will Experience</h3>
+            <h3 className="text-xl font-bold uppercase tracking-tight">The Experience</h3>
             <ul className="space-y-3 font-medium text-gray-700">
-              <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-primary" /> Algorithmic Tech Exhibition</li>
-              <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-primary" /> Content Battles</li>
-              <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-primary" /> Real-time Networking</li>
-              <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-primary" /> High-stakes Opportunities</li>
+              <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-primary" /> Live Project Demonstrations</li>
+              <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-primary" /> Hands-on Technical Exhibits</li>
+              <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-primary" /> Industry Expert Evaluations</li>
+              <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-primary" /> Collaborative Tech Workshops</li>
             </ul>
           </div>
         </AnimatedSection>
@@ -149,9 +149,9 @@ const Home = () => {
         <h2 className="text-3xl font-bold tracking-tight mb-12">Core Highlights</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { title: "Hack the Vault", desc: "Our flagship 96-hour hackathon with a prize pool of ₹5,00,000." },
-            { title: "Tech Exhibition", desc: "Interact with industry leaders shaping the future of finance." },
-            { title: "Network & Build", desc: "Connect with 1000+ developers, creators, and innovators from across the state." }
+            { title: "Project Exhibition", desc: "A massive showcase of 100+ technical projects across diverse domains like AI, Web, and Cybersecurity." },
+            { title: "Tech Competitions", desc: "Intense coding challenges and hackathons designed to push your limits." },
+            { title: "The Network", desc: "Connect with 1K+ developers, industry mentors, and innovative peers." }
           ].map((item, i) => (
               <AnimatedSection 
                 key={i}
@@ -172,17 +172,17 @@ const Home = () => {
       {/* 5. EXPERIENCE BREAKDOWN (TIMELINE) */}
       <section className="bg-gray-50 py-24 -mx-6 px-6 lg:-mx-20 lg:px-20 border-y border-border">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-black tracking-tight mb-16 text-center">Your Path to the Vault</h2>
+          <h2 className="text-4xl font-black tracking-tight mb-16 text-center">Your Road to the Stage</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
             <div className="hidden md:block absolute top-[28px] left-0 right-0 h-0.5 bg-border z-0" />
             <div className="hidden md:block absolute top-[28px] left-0 w-1/3 h-0.5 bg-primary z-0" />
             
             {[
-              { step: "01", title: "Register", desc: "Secure your unique ID and unlock your entry pass." },
-              { step: "02", title: "Decode", desc: "Complete the process and gain access to the system." },
-              { step: "03", title: "Compete", desc: "Enter the arena. Code, pitch, and perform." },
-              { step: "04", title: "Win", desc: "Claim the rewards. Control the game." }
+              { step: "01", title: "Register", desc: "Submit your technical project or prototype for evaluation." },
+              { step: "02", title: "Select", desc: "Get shortlisted based on technical depth and innovation." },
+              { step: "03", title: "Showcase", desc: "Demonstrate your solution to mentors and industry experts." },
+              { step: "04", title: "Win", desc: "Earn recognition, certificates, and exciting awards." }
             ].map((item, i) => (
               <motion.div 
                 key={i}
@@ -205,13 +205,13 @@ const Home = () => {
 
       {/* 6. WHAT YOU GET (VALUE SECTION) */}
       <section>
-        <h2 className="text-3xl font-bold tracking-tight mb-12">The Return on Investment</h2>
+        <h2 className="text-3xl font-bold tracking-tight mb-12">Return on Participation</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            { tag: "Access", title: "Elite Networking", text: "Connect directly with VCs, founders, and tech leaders." },
-            { tag: "Growth", title: "Real Exposure", text: "Solve real-world problems using live datasets." },
-            { tag: "Proof", title: "Certificates", text: "Earn verifiable credentials (blockchain-enabled)." },
-            { tag: "Reward", title: "Prize Pool", text: "Compete for significant financial rewards." }
+            { tag: "Access", title: "Expert Feedback", text: "Direct evaluations from industry veterans and technical leads." },
+            { tag: "Exposure", title: "State-wide Visibility", text: "Showcase your work to a massive audience of peers and mentors." },
+            { tag: "Growth", title: "Skill Validation", text: "Test your prototypes in real-world scenarios and get certified." },
+            { tag: "Reward", title: "Awards & Prizes", text: "Compete for significant rewards and technical recognition." }
           ].map((item, i) => (
             <div key={i} className="bg-white border border-border p-6 rounded-2xl hover:border-primary/30 transition-all hover:-translate-y-1">
               <span className="text-xs font-bold text-primary tracking-widest uppercase mb-4 block">{item.tag}</span>
@@ -231,7 +231,7 @@ const Home = () => {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 relative z-10">
           <div>
-            <div className="text-5xl md:text-7xl font-black mb-2 text-white"><AnimatedCounter from={0} to={1000} suffix="+" /></div>
+            <div className="text-5xl md:text-7xl font-black mb-2 text-white"><AnimatedCounter from={0} to={1} suffix="K+" /></div>
             <div className="text-primary font-bold tracking-widest text-sm uppercase">Participants</div>
           </div>
           <div>
@@ -252,15 +252,15 @@ const Home = () => {
       {/* 8. COMMUNITY / SOCIAL PROOF (TESTIMONIALS) */}
       <section>
         <div className="flex justify-between items-end mb-12">
-          <h2 className="text-3xl font-bold tracking-tight max-w-sm">Builders who successfully cracked the system last year.</h2>
-          <span className="hidden md:block text-primary font-bold hover:underline cursor-pointer">Read All Stories →</span>
+          <h2 className="text-3xl font-bold tracking-tight max-w-sm">Builders who showcased their innovation last year.</h2>
+          <span className="hidden md:block text-primary font-bold hover:underline cursor-pointer">View All Success Stories →</span>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { quote: "The scale of the hackathon pushed us to build production-ready solutions. Exceptionally well managed.", author: "Team Cryptic", role: "Winners 2k25" },
-            { quote: "Networking at the fintech summit landed me my summer internship. Best 3 days of my college life.", author: "Aman S.", role: "VIP Pass Holder" },
-            { quote: "Prayogam sets the gold standard for tech fests. The energy, the aesthetics, the competition — unmatched.", author: "Shruti P.", role: "Participant" }
+            { quote: "The exhibition gave us the platform to present our AI prototype to actual users. The feedback was invaluable.", author: "Team Visionary", role: "Winners 2k25" },
+            { quote: "Networking at the project expo landed me my first internship. It's the best platform for tech exposure.", author: "Aman S.", role: "Tech Delegate" },
+            { quote: "Prayogam sets the gold standard for tech exhibitions. The scale and the innovation quality are unmatched.", author: "Shruti P.", role: "Participant" }
           ].map((item, i) => (
             <div key={i} className="bg-gray-50 border border-border p-8 rounded-2xl relative">
               <div className="text-4xl text-gray-300 font-serif absolute top-6 right-6">"</div>
@@ -328,17 +328,17 @@ const Home = () => {
             className="relative z-10"
           >
             <div className="w-16 h-1 bg-primary mx-auto mb-8 shadow-[0_0_10px_rgba(255,0,0,0.8)]" />
-            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter mb-6 text-glow">
-              THE SYSTEM IS WAITING.
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter mb-6 text-glow uppercase">
+              REGISTER YOUR PROJECT.
             </h2>
             <p className="text-lg sm:text-xl text-gray-400 mb-12 font-medium max-w-2xl mx-auto">
-              Are you ready to enter the most intense tech-cultural convergence of 2026? Registrations closing soon.
+              Ready to showcase your technical excellence to the world? Registrations for projects are now open.
             </p>
             
             <a href={REGISTRATION_LINK} target="_blank" rel="noopener noreferrer" className="block sm:inline-block w-full sm:w-auto bg-primary text-white px-12 py-5 rounded-full font-bold text-xl hover:bg-white hover:text-primary transition-all active:scale-95 border border-primary">
-              Unlock Your Pass
+              Register Project
             </a>
-            <p className="text-gray-500 text-sm mt-6 font-medium">Secure your pass to enter the system.</p>
+            <p className="text-gray-500 text-sm mt-6 font-medium">Submit your project details to enter the arena.</p>
           </motion.div>
           
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_10%,transparent_100%)] pointer-events-none" />

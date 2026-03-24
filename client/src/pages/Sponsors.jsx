@@ -110,11 +110,11 @@ const Sponsors = () => {
         <div className="flex flex-wrap justify-center gap-x-3 sm:gap-x-4 mb-6">
           <AnimatedText text="POWERING" el="h1" className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-foreground uppercase" />
           <AnimatedText text="PRAYOGAM" el="h1" className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-foreground uppercase" />
-          <AnimatedText text="2K26" el="h1" className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-primary uppercase relative after:content-[''] after:absolute after:-bottom-2 md:after:-bottom-3 after:left-0 after:w-full after:h-1 md:after:h-1.5 after:bg-gradient-to-r after:from-primary/80 after:to-transparent" />
+          <AnimatedText text="2K26" el="h1" className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-primary uppercase relative after:content-[''] after:absolute after:-bottom-2 md:after:-bottom-3 after:left-0 after:w-full after:h-1 md:after:h-1.5 after:bg-gradient-to-r after:from-primary/80 after:to-transparent shadow-glow" />
         </div>
         <AnimatedSection direction="up" delay={0.2}>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed font-medium">
-            Collaborating with industry leaders, fintech pioneers, and global brands to build the ultimate tech-cultural experience.
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed font-medium uppercase tracking-tight">
+            "Collaborating with industry leaders to showcase the future of technical innovation and student excellence."
           </p>
         </AnimatedSection>
       </section>
@@ -145,7 +145,7 @@ const Sponsors = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Massive Student Reach</h3>
-                  <p className="text-gray-400 font-medium leading-relaxed">Gain direct exposure to 1000+ top-tier engineering and management students across the state.</p>
+                  <p className="text-gray-400 font-medium leading-relaxed">Gain direct exposure to 1K+ high-potential tech and management innovators across the state.</p>
                 </div>
               </div>
               <div className="flex gap-5">
@@ -163,7 +163,7 @@ const Sponsors = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Innovation Exposure</h3>
-                  <p className="text-gray-400 font-medium leading-relaxed">Position your company at the forefront of fintech and cybersecurity innovation.</p>
+                  <p className="text-gray-400 font-medium leading-relaxed">Position your company at the forefront of technical innovation and academic excellence.</p>
                 </div>
               </div>
             </div>
@@ -178,8 +178,8 @@ const Sponsors = () => {
                 <div className="text-sm font-bold text-gray-400 tracking-widest uppercase">Digital Reach</div>
               </div>
               <div className="text-center p-6 bg-black/40 rounded-2xl border border-white/5 hover:border-primary/50 transition-colors">
-                <div className="text-4xl font-black text-white mb-2">1000+</div>
-                <div className="text-sm font-bold text-gray-400 tracking-widest uppercase">Footfall</div>
+                <div className="text-4xl font-black text-white mb-2">1K+</div>
+                <div className="text-sm font-bold text-gray-400 tracking-widest uppercase">Participants</div>
               </div>
               <div className="text-center p-6 bg-black/40 rounded-2xl border border-white/5 hover:border-primary/50 transition-colors">
                 <div className="text-4xl font-black text-white mb-2">100+</div>

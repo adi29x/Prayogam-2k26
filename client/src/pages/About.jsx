@@ -11,7 +11,7 @@ const AboutHero = () => (
         <h2 className="text-lg sm:text-xl md:text-2xl text-gray-500 font-bold mb-8 uppercase tracking-widest">The Flagship Event of the Era</h2>
         
         <p className="text-base sm:text-lg text-gray-700 leading-relaxed font-medium mb-8">
-          Prayogam 2k26 is not just another college fest. It is an immersive, high-stakes convergence of technology, finance, and culture — built for creators who think, build, and execute at the highest level.
+          Prayogam 2k26 is a premier platform for technical project exhibitions. It is an immersive showcase of innovation, built for student developers who think, build, and execute at the highest level.
         </p>
 
         <div className="bg-gray-50 border border-border p-6 rounded-2xl mb-10">
@@ -19,8 +19,8 @@ const AboutHero = () => (
             Theme: Money Mystery 💸
           </div>
           <p className="text-gray-600 font-medium">
-            This year’s theme explores modern finance, blockchain, cybersecurity, and the systems that govern global wealth.<br/><br/>
-            <strong className="text-foreground">Hack the vault. Secure the assets. Build solutions that matter.</strong>
+            This year’s event highlights the most innovative projects in software, hardware, and emerging technology.<br/><br/>
+            <strong className="text-foreground italic uppercase tracking-tighter">Code the future. Build the solutions. Control the game.</strong>
           </p>
         </div>
 
@@ -52,8 +52,8 @@ const StatsSection = () => (
   <section className="py-12 border-y border-border bg-gray-50 -mx-6 px-6 lg:-mx-20 lg:px-20 mb-24">
     <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
       {[
-        { val: "96h", label: "Hackathon" },
-        { val: "10+", label: "Events" },
+        { val: "100+", label: "Projects" },
+        { val: "10+", label: "Domains" },
         { val: "1K+", label: "Attendees" },
         { val: "₹5L+", label: "Prize Pool" }
       ].map((stat, i) => (
@@ -80,12 +80,12 @@ const EventDetailItem = ({ icon: Icon, title, value }) => (
   
   const EventDetailsSection = () => {
     const details = [
-      { icon: MapPin, title: "Venue", value: "Poornima University, Sitapura Extension, Jaipur, Rajasthan" },
-      { icon: Calendar, title: "Final Event Date", value: "18 April 2026" },
-      { icon: Hourglass, title: "Duration", value: "Multi-phase event (March – April 2026)" },
-      { icon: Users, title: "Expected Footfall", value: "1000+ Participants" },
-      { icon: Lightbulb, title: "Projects", value: "100+ Innovative Projects" },
-      { icon: Brain, title: "Event Format", value: "Hackathons, Exhibitions, Competitions, Fun Activities" }
+      { icon: MapPin, title: "Venue", value: "Poornima University, Jaipur" },
+      { icon: Calendar, title: "Event Date", value: "18 April 2026" },
+      { icon: Hourglass, title: "Duration", value: "Multi-phase Tech Expo (March – April 2026)" },
+      { icon: Users, title: "Network", value: "1K+ Technical Participants" },
+      { icon: Lightbulb, title: "Scoping", value: "100+ Live Project Demos" },
+      { icon: Brain, title: "Format", value: "Exhibitions, Hackathons, & Tech Battles" }
     ];
   
     return (
@@ -113,27 +113,27 @@ const VisionSection = () => (
     <AnimatedSection direction="up" className="md:col-span-8 space-y-12">
       <div className="text-lg text-gray-700 leading-relaxed font-medium space-y-6">
         <p>
-          Prayogam aims to become a flagship innovation platform where students consistently showcase ideas, projects, and prototypes built during their academic journey.
+          Prayogam aims to be the leading innovation platform where student developers showcase the projects and prototypes they have meticulously built.
         </p>
         <p>
-          It is designed to cultivate a culture of experimentation, creativity, and problem-solving — transforming theoretical knowledge into real-world applications.
+          It is designed to nurture a culture of technical experimentation, creativity, and rigorous problem-solving—turning academic concepts into impactful reality.
         </p>
         <p>
-          Over time, Prayogam envisions becoming a recognized hub where student innovations evolve into impactful products, research initiatives, and startup ventures.
+          Our mission is to bridge the gap between classroom learning and the fast-paced world of technical development and industry standards.
         </p>
       </div>
 
-      <div className="bg-foreground text-white p-8 rounded-3xl relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-3xl rounded-full grayscale transition-all duration-500 hover:grayscale-0" />
-        <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
+      <div className="bg-foreground text-white p-8 rounded-3xl relative overflow-hidden group">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-3xl rounded-full transition-all duration-700 group-hover:bg-primary/40" />
+        <h3 className="text-2xl font-bold mb-4 flex items-center gap-3 relative z-10 uppercase tracking-tight">
           <div className="w-2 h-2 rounded-full bg-primary" />
-          Driving Innovation with PU-iNCENT
+          Collaborating with PU-iNCENT
         </h3>
-        <p className="text-gray-300 leading-relaxed mb-4">
-          Prayogam plays a critical role in strengthening the innovation ecosystem of PU-iNCENT (Poornima University Incubation Center). It acts as a discovery platform for student-led ideas and projects, enabling mentorship, validation, and incubation pathways.
+        <p className="text-gray-300 leading-relaxed mb-4 relative z-10">
+          Prayogam is a vital part of the PU-iNCENT (Poornima University Incubation Center) ecosystem. We act as a talent discovery platform, helping exceptional student projects transition into mentorship and development phases.
         </p>
-        <p className="text-gray-300 leading-relaxed">
-          By connecting students with mentors, experts, and the incubation system, Prayogam bridges creativity with real-world innovation and entrepreneurship.
+        <p className="text-gray-300 leading-relaxed relative z-10">
+          By connecting students with the right expertise, we help transform technical prototypes into mature solutions.
         </p>
       </div>
     </AnimatedSection>
@@ -233,18 +233,18 @@ const EventGuidelines = () => (
   <section className="mb-24 border-t border-border pt-24 px-4 md:px-0 text-center">
     <div className="max-w-3xl mx-auto space-y-8">
       <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tighter">Event Guidelines</h2>
-      <p className="text-lg text-gray-600 font-medium leading-relaxed">
-        Participants are required to follow the official rules and regulations during all phases of Prayogam 2k26. Ensure you decode every instruction carefully to stay ahead in the system.
+      <p className="text-lg text-gray-600 font-medium leading-relaxed italic">
+        "Participants must adhere to the professional standards of Prayogam 2k26. Quality of innovation and technical depth are the keys to success."
       </p>
       
       <div className="pt-4">
         <a 
           href="#" 
           onClick={(e) => e.preventDefault()}
-          className="inline-flex items-center gap-3 border-2 border-primary text-primary px-10 py-4 rounded-full font-black uppercase tracking-widest text-sm hover:bg-primary hover:text-white transition-all group"
+          className="inline-flex items-center gap-3 bg-foreground text-white border-2 border-foreground px-10 py-4 rounded-full font-black uppercase tracking-widest text-sm hover:bg-primary hover:border-primary transition-all group shadow-sm"
         >
-          Download Rules & Regulations
-          <div className="w-2 h-2 rounded-full bg-primary group-hover:bg-white animate-pulse" />
+          Download Guidelines Document
+          <div className="w-2 h-2 rounded-full bg-white group-hover:bg-white animate-pulse" />
         </a>
       </div>
     </div>
