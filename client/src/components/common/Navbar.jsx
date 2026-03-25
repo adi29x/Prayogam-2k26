@@ -33,7 +33,7 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md py-1 border-b border-primary/10 shadow-sm' : 'bg-white py-2'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md pt-3 pb-2 border-b border-primary/10 shadow-sm' : 'bg-white pt-5 pb-3'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <Link to="/" className="group flex items-center cursor-pointer transition-transform hover:scale-105 active:scale-95">
           <button onClick={() => setIsMenuOpen(false)} className="text-xl md:text-2xl font-black tracking-tighter uppercase flex items-center gap-1">
