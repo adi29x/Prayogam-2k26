@@ -8,11 +8,12 @@ const Contact = () => {
     <div className="min-h-screen py-12 px-4 md:px-0">
       
       {/* HERO SECTION */}
-      <div className="text-center mb-24">
-        <AnimatedText text="CONTACT THE SYSTEM" spanText="THE SYSTEM" spanClass="text-primary" el="h1" className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter mb-4 uppercase" />
+      <div className="text-center mb-24 font-black">
+        <AnimatedText text="Contact the System" spanText="System" spanClass="text-primary" el="h1" className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter mb-4 uppercase" />
         <AnimatedSection direction="up" delay={0.2}>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-medium uppercase tracking-wide">
-            Have questions, partnerships, or ideas? Reach out to the Prayogam Core Team.
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-medium uppercase tracking-wide px-4">
+            Have questions, need assistance, or want to collaborate? <br />
+            Reach out to the Prayogam Core Team.
           </p>
         </AnimatedSection>
       </div>
@@ -22,14 +23,14 @@ const Contact = () => {
         {/* LEFT COLUMN: INFO & LOCATION */}
         <div className="lg:col-span-1 space-y-8">
           <AnimatedSection direction="left" className="bg-white border border-border p-8 rounded-3xl shadow-sm">
-            <h3 className="text-xl font-black uppercase tracking-tight mb-8 flex items-center gap-3">
+            <h3 className="text-xl font-black uppercase tracking-tight mb-8 flex items-center gap-3 text-foreground">
               <MapPin size={24} className="text-primary" />
               Location
             </h3>
             <div className="space-y-2">
               <p className="font-bold text-foreground">Room No. 147, Academic Block</p>
-              <p className="text-gray-500 font-medium">Poornima University</p>
-              <p className="text-gray-400 text-sm italic mt-4">The headquarters of the 2k26 operation.</p>
+              <p className="text-gray-500 font-medium leading-relaxed">Poornima University, Jaipur</p>
+              <p className="text-gray-400 text-sm italic mt-4">The central coordination point for Prayogam 2k26 operations.</p>
             </div>
           </AnimatedSection>
 
@@ -56,10 +57,11 @@ const Contact = () => {
         {/* RIGHT COLUMN: CORE CONTACTS */}
         <div className="lg:col-span-2 space-y-12">
           <AnimatedSection direction="up" className="bg-gray-50 border border-border rounded-[2.5rem] p-8 md:p-12">
-            <h2 className="text-2xl font-black uppercase tracking-tight mb-12 flex items-center gap-4">
+            <h2 className="text-2xl font-black uppercase tracking-tight mb-4 flex items-center gap-4 text-foreground">
                <div className="w-2 h-2 rounded-full bg-primary" />
                Core Response Team
             </h2>
+            <p className="text-gray-400 font-bold uppercase tracking-widest text-[10px] mb-12 ml-6">Connect with the primary coordinators for event-related queries.</p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
@@ -99,12 +101,12 @@ const Contact = () => {
                   email: "2025ecsvikas23976@poornima.edu.in" 
                 },
                 { 
-                  dept: "Registrations", 
+                  dept: "Registrations & Pass Access", 
                   name: "Piyush Agar", 
                   email: "2024btechaidspiyush19641@poornima.edu.in" 
                 },
                 { 
-                  dept: "Sponsorship", 
+                  dept: "Sponsorship & Partnerships", 
                   name: "Aman Nehra", 
                   email: "2025btechaidsaman20789@poornima.edu.in" 
                 }

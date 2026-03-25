@@ -107,14 +107,16 @@ const Sponsors = () => {
     <div className="flex flex-col gap-12 py-12 min-h-screen">
       {/* Hero Section */}
       <section className="text-center max-w-4xl mx-auto px-6 mb-12">
-        <div className="flex flex-wrap justify-center gap-x-3 sm:gap-x-4 mb-6">
-          <AnimatedText text="POWERING" el="h1" className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-foreground uppercase" />
-          <AnimatedText text="PRAYOGAM" el="h1" className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-foreground uppercase" />
+        <div className="flex flex-col items-center mb-6">
+          <div className="flex flex-wrap justify-center gap-x-3 sm:gap-x-4">
+            <AnimatedText text="POWERING" el="h1" className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-foreground uppercase" />
+            <AnimatedText text="PRAYOGAM" el="h1" className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-foreground uppercase" />
+          </div>
           <AnimatedText text="2K26" el="h1" className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-primary uppercase relative after:content-[''] after:absolute after:-bottom-2 md:after:-bottom-3 after:left-0 after:w-full after:h-1 md:after:h-1.5 after:bg-gradient-to-r after:from-primary/80 after:to-transparent shadow-glow" />
         </div>
         <AnimatedSection direction="up" delay={0.2}>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed font-medium uppercase tracking-tight">
-            "Collaborating with industry leaders to showcase the future of technical innovation and student excellence."
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed font-medium uppercase tracking-tight italic">
+            "Collaborating with organizations and partners to support innovation, student talent, and technical excellence."
           </p>
         </AnimatedSection>
       </section>
@@ -144,8 +146,8 @@ const Sponsors = () => {
                   <div className="w-4 h-4 bg-primary rounded-full shadow-[0_0_10px_rgba(229,9,20,0.8)]" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-2">Massive Student Reach</h3>
-                  <p className="text-gray-400 font-medium leading-relaxed">Gain direct exposure to 1K+ high-potential tech and management innovators across the state.</p>
+                  <h3 className="text-2xl font-bold mb-2">Direct Student Reach</h3>
+                  <p className="text-gray-400 font-medium leading-relaxed">Connect with 1000+ students actively working on technical projects and innovation.</p>
                 </div>
               </div>
               <div className="flex gap-5">
@@ -153,8 +155,15 @@ const Sponsors = () => {
                   <div className="w-4 h-4 bg-primary rounded-full shadow-[0_0_10px_rgba(229,9,20,0.8)]" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-2">Brand Visibility</h3>
-                  <p className="text-gray-400 font-medium leading-relaxed">Feature your brand across high-traffic digital platforms and on-campus installations.</p>
+                  <h3 className="text-2xl font-bold mb-2">Strong Brand Visibility</h3>
+                  <p className="text-gray-400 font-medium leading-relaxed">
+                    Your brand will be visible across:
+                    <ul className="mt-2 text-sm space-y-1 opacity-80 uppercase tracking-widest font-black">
+                      <li>• Event platforms</li>
+                      <li>• On-campus installations</li>
+                      <li>• Digital promotions</li>
+                    </ul>
+                  </p>
                 </div>
               </div>
               <div className="flex gap-5">
@@ -162,8 +171,8 @@ const Sponsors = () => {
                   <div className="w-4 h-4 bg-primary rounded-full shadow-[0_0_10px_rgba(229,9,20,0.8)]" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-2">Innovation Exposure</h3>
-                  <p className="text-gray-400 font-medium leading-relaxed">Position your company at the forefront of technical innovation and academic excellence.</p>
+                  <h3 className="text-2xl font-bold mb-2">Access to Emerging Talent</h3>
+                  <p className="text-gray-400 font-medium leading-relaxed">Engage with students who are building real projects and developing practical skills.</p>
                 </div>
               </div>
             </div>
@@ -182,7 +191,7 @@ const Sponsors = () => {
                 <div className="text-sm font-bold text-gray-400 tracking-widest uppercase">Participants</div>
               </div>
               <div className="text-center p-6 bg-black/40 rounded-2xl border border-white/5 hover:border-primary/50 transition-colors">
-                <div className="text-4xl font-black text-white mb-2">100+</div>
+                <div className="text-4xl font-black text-white mb-2">200+</div>
                 <div className="text-sm font-bold text-gray-400 tracking-widest uppercase">Projects</div>
               </div>
               <div className="text-center p-6 bg-black/40 rounded-2xl border border-white/5 hover:border-primary/50 transition-colors">
@@ -206,8 +215,11 @@ const Sponsors = () => {
       {/* Final CTA */}
       <section className="text-center max-w-2xl mx-auto px-6 py-20">
         <h2 className="text-3xl sm:text-4xl font-black tracking-tight mb-6">Ready to Become a Catalyst?</h2>
-        <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-10 font-medium">Let’s build a partnership that aligns with your brand’s vision and delivers real impact.</p>
-        <Link to="/contact-sponsors" className="block sm:inline-block w-full sm:w-auto border-2 border-foreground bg-white text-foreground px-10 py-5 rounded-full font-bold hover:bg-foreground hover:text-white transition-all text-lg shadow-sm">
+        <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-10 font-medium italic">
+          Be part of a structured platform where innovation is built, tested, and presented. <br /><br />
+          Partner with Prayogam 2k26 to support student-driven ideas and gain meaningful visibility.
+        </p>
+        <Link to="/contact-sponsors" className="block sm:inline-block w-full sm:w-auto border-2 border-foreground bg-white text-foreground px-10 py-5 rounded-full font-bold hover:bg-foreground hover:text-white transition-all text-lg shadow-sm uppercase tracking-widest">
           Contact Sponsorship Team
         </Link>
       </section>

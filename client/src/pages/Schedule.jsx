@@ -25,14 +25,23 @@ const SchedulePhaseCard = ({ phase, index }) => {
           </div>
         </div>
         
-        <ul className="space-y-4 relative z-10">
+        <ul className="space-y-4 relative z-10 mb-6">
           {phase.events.map((event, i) => (
-            <li key={i} className="flex items-start gap-3 text-gray-700 font-medium">
+            <li key={i} className="flex items-start gap-3 text-gray-700 font-medium text-sm md:text-base">
               <div className="w-1.5 h-1.5 rounded-full bg-foreground mt-2 shrink-0 group-hover:bg-primary transition-colors" />
               <span className="leading-relaxed">{event}</span>
             </li>
           ))}
         </ul>
+
+        {phase.summary && (
+          <div className="pt-4 border-t border-border/50 relative z-10">
+            <p className="text-xs md:text-sm font-bold text-gray-500 italic leading-relaxed">
+              <span className="text-primary not-italic mr-2">Summary:</span>
+              {phase.summary}
+            </p>
+          </div>
+        )}
       </div>
     </AnimatedSection>
   );
@@ -41,70 +50,79 @@ const SchedulePhaseCard = ({ phase, index }) => {
 const Schedule = () => {
   const schedulePhases = [
     {
-      title: "Phase 1 — Pre-Mentorship",
+      title: "Phase 1: Pre-Mentorship",
       date: "16 – 20 March",
       events: [
-        "Orientation & Introduction",
-        "Problem Statement Release",
-        "Mentor Allocation",
-        "Initial Guidance Sessions"
-      ]
+        "Orientation and event briefing",
+        "Understanding problem statements",
+        "Mentor allocation to teams",
+        "Initial guidance and discussion sessions"
+      ],
+      summary: "This phase helps participants understand direction and start with clarity."
     },
     {
-      title: "Phase 2 — Development Phase",
+      title: "Phase 2: Development Phase",
       date: "20 – 31 March",
       events: [
-        "Team Formation & Ideation",
-        "Project Development",
-        "Continuous Mentorship Support",
-        "Internal Progress Reviews"
-      ]
+        "Team coordination and idea building",
+        "Project development and implementation",
+        "Continuous mentor support",
+        "Internal progress reviews"
+      ],
+      summary: "Focus is on building a working solution with proper structure."
     },
     {
-      title: "Phase 3 — Screening",
+      title: "Phase 3: Screening",
       date: "1 – 4 April",
       events: [
-        "Project Submissions",
-        "Evaluation by Experts",
-        "Shortlisting of Top Teams"
-      ]
+        "Project submission for review",
+        "Evaluation by faculty and mentors",
+        "Shortlisting based on quality and clarity"
+      ],
+      summary: "Only well-developed and clearly presented projects move forward."
     },
     {
-      title: "Phase 4 — Post-Mentorship",
+      title: "Phase 4: Post-Mentorship",
       date: "6 – 10 April",
       events: [
-        "Advanced Mentorship Sessions",
-        "Pitch Refinement",
-        "Product Improvement & Debugging"
-      ]
+        "Advanced mentoring sessions",
+        "Improvement in project structure",
+        "Pitch and presentation refinement",
+        "Debugging and final corrections"
+      ],
+      summary: "This phase ensures projects are ready for final presentation."
     },
     {
-      title: "Phase 5 — Exhibition (Phase 1)",
+      title: "Phase 5: Exhibition (Phase 1)",
       date: "15 April",
       events: [
-        "Project Showcase (Round 1)",
-        "Live Demonstrations",
-        "Initial Jury Interaction"
-      ]
+        "First round of project showcase",
+        "Live demonstrations",
+        "Initial interaction with evaluators"
+      ],
+      summary: "Participants present their work and receive feedback."
     },
     {
-      title: "Phase 6 — Exhibition (Phase 2)",
+      title: "Phase 6: Exhibition (Phase 2)",
       date: "16 April",
       events: [
-        "Advanced Evaluation",
-        "Final Shortlisting",
-        "Jury Deep Dive"
-      ]
+        "Detailed evaluation by experts",
+        "In-depth discussion of projects",
+        "Final shortlisting of top teams"
+      ],
+      summary: "Focus is on depth, clarity, and real-world relevance."
     },
     {
-      title: "Final Day — The Vault",
+      title: "Final Day: The Vault",
       date: "18 April",
       events: [
-        "Final Presentations & Pitching",
-        "Winner Selection",
-        "Awards & Closing Ceremony",
-        "Money Mystery DJ Night"
-      ]
+        "Final presentations and pitching",
+        "Evaluation by judges and experts",
+        "Selection of winners",
+        "Awards and closing ceremony",
+        "Money Mystery Night"
+      ],
+      summary: "This is the final stage where the best work is recognized."
     }
   ];
 
@@ -113,13 +131,13 @@ const Schedule = () => {
       <div className="text-center mb-20">
         <AnimatedText text="SCHEDULE" el="h1" className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter mb-4" />
         <AnimatedSection direction="up" delay={0.2}>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            The complete journey of Prayogam 2k26 — from mentorship to the final vault.
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-medium uppercase tracking-widest italic">
+            "The complete journey of Prayogam 2k26 — a structured process from initial guidance to final evaluation."
           </p>
         </AnimatedSection>
       </div>
 
-      <div className="relative border-l-2 border-border ml-6 md:ml-10 pt-4">
+      <div className="relative border-l-2 border-border ml-6 md:ml-10 pt-4 mb-24">
         {schedulePhases.map((phase, i) => (
           <SchedulePhaseCard key={i} phase={phase} index={i} />
         ))}

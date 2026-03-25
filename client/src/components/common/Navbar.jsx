@@ -25,6 +25,7 @@ const Navbar = () => {
     { name: 'Sponsors', path: '/sponsors' },
     { name: 'Passes', path: '/passes' },
     { name: 'Prizes', path: '/prizes' },
+    { name: 'Leaderboard', path: '/leaderboard' },
     { name: 'Announcements', path: '/announcements' },
     { name: 'Contact', path: '/contact' },
   ];
@@ -32,15 +33,12 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass py-3 shadow-md' : 'bg-white py-4'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md py-1 border-b border-primary/10 shadow-sm' : 'bg-white py-2'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <Link to="/" className="group flex items-center py-2 cursor-pointer">
-          <button onClick={() => setIsMenuOpen(false)}>
-            <img 
-              src="/logo-new.png" 
-              alt="Prayogam 2k26" 
-              className="h-[50px] md:h-[65px] lg:h-[75px] w-auto transition-all duration-500 hover:scale-105" 
-            />
+        <Link to="/" className="group flex items-center cursor-pointer transition-transform hover:scale-105 active:scale-95">
+          <button onClick={() => setIsMenuOpen(false)} className="text-xl md:text-2xl font-black tracking-tighter uppercase flex items-center gap-1">
+            <span className="text-foreground">PRAYOGAM</span>
+            <span className="text-primary">2K26</span>
           </button>
         </Link>
 
@@ -60,7 +58,7 @@ const Navbar = () => {
               }`} />
             </Link>
           ))}
-          <a href={REGISTRATION_LINK} target="_blank" rel="noopener noreferrer" className="bg-primary text-white px-6 py-2 rounded-full font-bold text-sm shadow-[0_4px_14px_rgba(255,0,0,0.39)] hover:shadow-[0_6px_20px_rgba(255,0,0,0.39)] hover:-translate-y-0.5 transition-all ml-4">
+          <a href={REGISTRATION_LINK} target="_blank" rel="noopener noreferrer" className="bg-primary text-white px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-black hover:-translate-y-0.5 transition-all ml-4">
             Get Pass
           </a>
         </div>

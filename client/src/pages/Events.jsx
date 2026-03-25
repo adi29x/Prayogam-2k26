@@ -12,9 +12,9 @@ const EventCard = ({ event, index }) => {
     <AnimatedSection direction={index % 2 === 0 ? "left" : "right"} delay={(index % 3) * 0.1}>
       <motion.div 
         layout
-        className="group bg-white border border-border rounded-[2rem] overflow-hidden hover:border-primary/50 hover:-translate-y-2 transition-all duration-300 flex flex-col h-full shadow-sm"
+        className="group bg-white border border-border rounded-[2.5rem] overflow-hidden hover:border-primary/50 hover:-translate-y-2 transition-all duration-300 flex flex-col h-full shadow-sm"
       >
-      <div className="relative h-56 bg-foreground overflow-hidden">
+      <div className="relative h-60 bg-foreground overflow-hidden">
         <div className="absolute inset-0 bg-transparent group-hover:bg-primary/20 transition-colors z-10 pointer-events-none duration-500" />
         <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-3xl rounded-full" />
         <img 
@@ -23,23 +23,46 @@ const EventCard = ({ event, index }) => {
           loading="lazy"
           className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
         />
-        <div className="absolute top-4 left-4 z-20 flex gap-2">
-          <div className="bg-primary text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full shadow-sm">
+        <div className="absolute top-5 left-5 z-20 flex flex-col gap-2">
+          <div className="bg-primary text-white text-[10px] font-bold tracking-widest uppercase px-4 py-1.5 rounded-full shadow-lg self-start">
             {event.category}
           </div>
           {event.isFun && (
-            <div className="bg-black text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full shadow-sm">
+            <div className="bg-black text-white text-[10px] font-bold tracking-widest uppercase px-4 py-1.5 rounded-full shadow-lg self-start">
               Open for All
             </div>
           )}
         </div>
       </div>
       
-      <div className="p-6 md:p-8 flex flex-col flex-1">
-        <h3 className="text-2xl font-black text-foreground mb-3 leading-tight group-hover:text-primary transition-colors">{event.title}</h3>
-        <p className="text-gray-600 font-medium mb-6 flex-1 leading-relaxed text-sm">
+      <div className="p-8 md:p-10 flex flex-col flex-1">
+        <div className="mb-6">
+          <h3 className="text-2xl md:text-3xl font-black text-foreground mb-1 leading-tight group-hover:text-primary transition-colors">{event.title}</h3>
+          {event.subtitle && (
+            <p className="text-primary font-black text-xs uppercase tracking-[0.2em] italic mb-4">{event.subtitle}</p>
+          )}
+        </div>
+
+        <p className="text-gray-600 font-medium mb-8 flex-1 leading-relaxed text-sm">
           {event.description}
         </p>
+
+        {(event.recognition || event.rewards) && (
+          <div className="space-y-6 mb-8 pt-6 border-t border-border/50">
+            {event.recognition && (
+              <div>
+                <span className="text-[10px] font-black uppercase tracking-widest text-primary block mb-2">Recognition</span>
+                <p className="text-xs text-foreground font-bold leading-relaxed">{event.recognition}</p>
+              </div>
+            )}
+            {event.rewards && (
+              <div>
+                <span className="text-[10px] font-black uppercase tracking-widest text-primary block mb-2">Rewards</span>
+                <p className="text-xs text-foreground font-bold leading-relaxed">{event.rewards}</p>
+              </div>
+            )}
+          </div>
+        )}
         
         <div className="mt-auto space-y-4">
           <div className="flex flex-col gap-2">
@@ -47,7 +70,7 @@ const EventCard = ({ event, index }) => {
               Free with Pass
             </div>
           </div>
-          <Link to={`/events/${formatUrl(event.title)}`} className="w-full bg-background border border-border text-foreground font-bold py-3 rounded-xl group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 flex justify-center items-center gap-2 text-sm uppercase tracking-wider">
+          <Link to={`/events/${formatUrl(event.title)}`} className="w-full bg-background border border-border text-foreground font-black py-4 rounded-2xl group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 flex justify-center items-center gap-2 text-xs uppercase tracking-widest shadow-sm">
             View Details <span className="group-hover:translate-x-1 transition-transform">→</span>
           </Link>
         </div>
@@ -64,54 +87,156 @@ const Events = () => {
     {
       title: "Exhibition — Phase 1",
       category: "Innovation",
-      description: "Initial showcase of diverse technical projects and student-led prototypes.",
+      description: "Initial showcase of student-built projects and working prototypes. Participants present their ideas, system flow, and implementation.",
       image: null
     },
     {
       title: "Exhibition — Phase 2",
       category: "Innovation",
-      description: "Advanced project demonstrations and technical evaluation by industry mentors.",
+      description: "Shortlisted projects move forward for deeper evaluation and mentor interaction. Focus on clarity, working model, and improvements.",
       image: null
     },
     {
       title: "The Grand Finale",
       category: "Innovation",
-      description: "Final presentation of top-tier technical solutions competing for key awards.",
+      description: "Final presentation of selected projects in front of experts and evaluators. Only the strongest solutions are recognized.",
       image: null
     },
     {
-      title: "Dev Showcase",
-      category: "Content",
-      description: "Create high-impact technical demos and project walk-throughs.",
+      title: "Class Rep System",
+      category: "Marketing",
+      subtitle: "Top Promoter",
+      description: "Promote Prayogam across your class and network. Rankings are based on performance and reach.",
+      recognition: "Post + Story + Highlight + Leaderboard Post",
+      rewards: "Goodies + Wildcard Pass + Certificate",
       image: null
     },
     {
-      title: "Tech Influencer",
+      title: "Reel Competition",
       category: "Content",
-      description: "Strategic sharing of technical insights and development journeys.",
+      subtitle: "Top Creators",
+      description: "Create reels based on Prayogam, your project, or event moments. Top creators get featured.",
+      recognition: "Top 3 Post + Story + Highlight + Announcement",
+      rewards: "Certificate + Goodies + Wildcard Pass + Networking Access",
+      image: null
+    },
+    {
+      title: "Referral Chain",
+      category: "Marketing",
+      subtitle: "Growth Hacker",
+      description: "Bring maximum participants through your referral chain and move up the leaderboard.",
+      recognition: "Leaderboard Post + Post + Story + Highlight",
+      rewards: "Certificate + Pass",
+      image: null
+    },
+    {
+      title: "Influencer Clash",
+      category: "Content",
+      subtitle: "Top Influencer",
+      description: "Compete to become the most impactful voice during Prayogam through consistent content.",
+      recognition: "Post + Story + Highlight + Announcement",
+      rewards: "Certificate + Wildcard Pass",
       image: null
     },
     {
       title: "The Code Enigma",
       category: "Tech",
-      description: "Solve complex technical sequences and logic-based development puzzles.",
+      subtitle: "Code Breaker",
+      description: "Find and solve hidden codes and logical patterns placed across the system.",
+      recognition: "Post + Story + Highlight",
+      rewards: "Wildcard Pass",
       image: null
     },
     {
       title: "Debug Challenge",
       category: "Tech",
-      description: "A rapid-fire technical challenge testing debugging and architecture skills.",
+      subtitle: "Master Decoder",
+      description: "Break down problems, identify errors, and solve structured decoding challenges.",
+      recognition: "Post + Story + Highlight",
+      rewards: "Wildcard Pass",
       image: null
     },
-    { title: "Innovation Hunt", category: "Fun", description: "Spot the most creative features across the exhibition.", isFun: true },
-    { title: "Tech Capture", category: "Fun", description: "Document your tech exhibition experience at the photobooth.", isFun: true },
-    { title: "Spin the Tech-Wheel", category: "Fun", description: "Test your luck for instant tech-related rewards.", isFun: true },
-    { title: "Logic Quiz", category: "Fun", description: "Speed, precision, and technical knowledge determine the winner.", isFun: true },
-    { title: "Dev Survival", category: "Fun", description: "A high-stakes game of technical focus and focus.", isFun: true },
-    { title: "The Tech Debate", category: "Fun", description: "Decide the future of tech in this high-energy audience battle.", isFun: true },
-    { title: "Rapid Code", category: "Fun", description: "One requirement, five required outputs. Implement it fast.", isFun: true },
-    { title: "Tech Valuation", category: "Fun", description: "Estimate the potential impact of technical innovations.", isFun: true },
-    { title: "Open Stage", category: "Fun", description: "The stage is yours. Share your development talent with the community.", isFun: true }
+    { 
+      title: "Innovation Hunt", 
+      category: "Fun", 
+      subtitle: "Best Moment",
+      description: "Capture and share the most interesting and meaningful moments during the event.", 
+      recognition: "Post + Story + Highlight",
+      rewards: "—",
+      isFun: true 
+    },
+    { 
+      title: "Tech Capture", 
+      category: "Fun", 
+      subtitle: "Best Reel / Moment",
+      description: "Create content at the photo and reel booth and showcase your perspective of Prayogam.", 
+      recognition: "Post + Story + Highlight",
+      rewards: "—",
+      isFun: true 
+    },
+    { 
+      title: "Spin the Tech-Wheel", 
+      category: "Fun", 
+      subtitle: "Lucky Player",
+      description: "Spin and unlock random rewards. Some spins may grant rare access benefits.", 
+      recognition: "Story (mass) + Highlight (optional)",
+      rewards: "Small Goodies + Rare Wildcard Pass",
+      isFun: true 
+    },
+    { 
+      title: "Logic Quiz", 
+      category: "Fun", 
+      subtitle: "Quick Trigger",
+      description: "Answer fast-paced questions based on logic and observation.", 
+      recognition: "Post + Story + Highlight",
+      rewards: "Small Goodies",
+      isFun: true 
+    },
+    { 
+      title: "Dev Survival", 
+      category: "Fun", 
+      subtitle: "Truth Identifier",
+      description: "Participate in interactive rounds where understanding and decision-making are tested.", 
+      recognition: "Post + Story + Highlight",
+      rewards: "Small Goodies",
+      isFun: true 
+    },
+    { 
+      title: "The Tech Debate", 
+      category: "Fun", 
+      subtitle: "Decision Maker",
+      description: "Choose your side and defend your thinking in structured discussions.", 
+      recognition: "Post + Story + Highlight",
+      rewards: "Small Goodies",
+      isFun: true 
+    },
+    { 
+      title: "Rapid Code", 
+      category: "Fun", 
+      subtitle: "Precision Predictor",
+      description: "Answer structured questions requiring multiple correct responses.", 
+      recognition: "Post + Story + Highlight",
+      rewards: "Small Goodies",
+      isFun: true 
+    },
+    { 
+      title: "Tech Valuation", 
+      category: "Fun", 
+      subtitle: "Market Predictor",
+      description: "Estimate values, outcomes, or logic-based scenarios accurately.", 
+      recognition: "Post + Story + Highlight",
+      rewards: "Small Goodies",
+      isFun: true 
+    },
+    { 
+      title: "Open Stage", 
+      category: "Content", 
+      subtitle: "Best Speaker of the Event",
+      description: "(Open for All) Present your thoughts, ideas, or experiences clearly in front of an audience.", 
+      recognition: "Post + Story + Highlight + Announcement",
+      rewards: "Certificate + Recognition (+ Optional Goodies)",
+      isFun: true 
+    }
   ];
 
   const categories = ['All', ...new Set(allEvents.map(e => e.category))];
@@ -128,7 +253,7 @@ const Events = () => {
         <AnimatedText text="TECHNICAL EXHIBITIONS" el="h1" className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter mb-4 uppercase" />
         <AnimatedSection direction="up" delay={0.2}>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-medium uppercase tracking-widest italic">
-            "Explore the full range of innovative project challenges."
+            "Explore all activities designed to test, present, and evaluate your skills."
           </p>
         </AnimatedSection>
       </div>
@@ -141,11 +266,13 @@ const Events = () => {
         <div>
           <h3 className="font-black text-xl text-primary uppercase tracking-tight mb-1">Registration Access</h3>
           <p className="text-foreground font-medium text-sm">
-            To participate in these sessions, you must complete your <span className="font-bold text-primary italic uppercase">Project Submission Entry</span>.
+            To participate in these activities, you must complete your <span className="font-bold text-primary italic uppercase">event registration through the Transaction File Pass</span> and secure your access.
+            <br />
+            <span className="text-[10px] text-gray-500 uppercase tracking-widest mt-2 block">Only participants with a valid Transaction File Pass will be allowed to take part.</span>
           </p>
         </div>
         <a href={REGISTRATION_LINK} target="_blank" rel="noopener noreferrer" className="shrink-0 block w-full sm:w-auto text-center bg-primary text-white font-bold py-4 px-10 rounded-full shadow-glow hover:bg-black transition-all uppercase tracking-widest text-sm">
-          Secure Pass
+          Secure Your Pass
         </a>
       </AnimatedSection>
 
@@ -165,7 +292,7 @@ const Events = () => {
         ))}
       </div>
 
-      <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-24">
         <AnimatePresence mode="popLayout">
           {filteredEvents.map((event, index) => (
             <EventCard key={event.title} event={event} index={index} />
@@ -176,5 +303,6 @@ const Events = () => {
     </div>
   );
 };
+
 
 export default Events;

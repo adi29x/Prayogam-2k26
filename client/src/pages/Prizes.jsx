@@ -30,28 +30,28 @@ const Prizes = () => {
   const mainPrizes = [
     {
       title: "The Ultimate Innovator",
-      amount: "₹2,50,000",
-      description: "Awarded to the team with the most technically sophisticated and impactful project in the exhibition.",
+      amount: "Grand Title",
+      description: "Awarded to the project showing overall strength in idea, execution, and presentation.",
       icon: Trophy
     },
     {
       title: "Technical Excellence",
-      amount: "₹1,50,000",
-      description: "Recognition for superior technical depth, architecture, and system design.",
+      amount: "Technical Title",
+      description: "Recognition for strong technical understanding, structure, and implementation.",
       icon: Award
     },
     {
-      title: "Emerging Tech Award",
-      amount: "₹1,00,000",
-      description: "Awarded to the most promising application of emerging technologies like AI/ML or Blockchain (technical focus).",
+      title: "Emerging Tech Recognition",
+      amount: "Innovation Title",
+      description: "Focused on projects exploring modern technologies such as AI, ML, or advanced systems.",
       icon: Crown
     }
   ];
 
   const specialCategories = [
-    { title: "Best UI/UX Design", amount: "₹25,000", icon: Star, desc: "Superior aesthetics and user experience." },
-    { title: "Best Social Impact", amount: "₹25,000", icon: Target, desc: "Projects driving meaningful social change." },
-    { title: "Rising Innovators", amount: "₹20,000", icon: Gift, desc: "Best performance by a junior-level team." }
+    { title: "Best UI/UX Design", amount: "Design Tier", icon: Star, desc: "For clear, structured, and user-focused design." },
+    { title: "Best Social Impact", amount: "Impact Tier", icon: Target, desc: "For projects addressing real-world problems and use cases." },
+    { title: "Rising Innovators", amount: "Rising Tier", icon: Gift, desc: "For strong performance and promising potential among early-stage participants." }
   ];
 
   return (
@@ -61,15 +61,12 @@ const Prizes = () => {
       <div className="text-center mb-24">
         <AnimatedText text="Prizes & Recognition" el="h1" className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter mb-4 uppercase" />
         <AnimatedSection direction="up" delay={0.2}>
-          <div className="inline-block px-6 py-2 rounded-full border-2 border-primary text-primary font-black uppercase tracking-widest text-xs mb-6">
-            Global Innovation Fund
-          </div>
-          <h2 className="text-gray-400 font-bold uppercase tracking-[0.3em] text-sm mb-2">Total Prize Pool</h2>
+          <h2 className="text-gray-400 font-bold uppercase tracking-[0.3em] text-sm mb-2 font-black">Total Prize Pool Worth</h2>
           <div className="text-5xl md:text-8xl font-black text-foreground tracking-tighter mb-8 tabular-nums">
-            ₹5,00,000
+            ₹5,00,000+
           </div>
           <p className="text-base sm:text-lg md:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed font-medium italic">
-            "Recognizing the minds that build the future. High-impact rewards for technical excellence."
+            "Recognizing individuals and teams demonstrating strong technical thinking, execution, and clarity."
           </p>
         </AnimatedSection>
       </div>
@@ -103,7 +100,7 @@ const Prizes = () => {
                 </div>
                 <div>
                   <h3 className="font-black uppercase tracking-tight text-foreground">{cat.title}</h3>
-                  <div className="text-primary font-bold">{cat.amount}</div>
+                  <div className="text-primary font-bold text-xs uppercase tracking-widest">{cat.amount}</div>
                 </div>
               </div>
               <p className="text-gray-500 text-sm font-medium">{cat.desc}</p>
@@ -112,23 +109,58 @@ const Prizes = () => {
         </div>
       </section>
 
+      {/* EVENT-BASED RECOGNITION */}
+      <section className="max-w-7xl mx-auto mb-24">
+        <div className="flex flex-col items-center mb-12">
+          <h2 className="text-3xl font-black uppercase tracking-tighter mb-4">Event-Based Recognition Titles</h2>
+          <div className="w-16 h-1 bg-primary" />
+        </div>
+        
+        <div className="bg-foreground text-white p-10 md:p-16 rounded-[3rem] relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[100px] rounded-full" />
+          <p className="text-gray-400 font-medium mb-12 text-center max-w-2xl mx-auto leading-relaxed">
+            Participants across different activities may be recognized under the following titles. Recognition is based on performance, participation, and consistency across activities.
+          </p>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {[
+              "Top Promoter", "Top Creators", "Growth Hacker", 
+              "Top Influencer", "Code Breaker", "Master Decoder", 
+              "Best Moment", "Best Reel / Moment", "Lucky Player", 
+              "Quick Trigger", "Truth Identifier", "Decision Maker", 
+              "Precision Predictor", "Market Predictor", "Best Speaker"
+            ].map((title, i) => (
+              <div key={i} className="bg-white/5 border border-white/10 p-4 rounded-xl text-center group hover:border-primary/50 transition-all">
+                <div className="text-[10px] font-black uppercase tracking-widest text-primary mb-1 opacity-50 group-hover:opacity-100 transition-opacity">Title</div>
+                <div className="text-xs font-bold text-gray-200 group-hover:text-white transition-colors">{title}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* REWARDS BREAKDOWN */}
-      <AnimatedSection direction="up" className="max-w-4xl mx-auto text-center border-t border-border pt-12">
+      <AnimatedSection direction="up" className="max-w-4xl mx-auto text-center border-t border-border pt-12 pb-24">
         <h2 className="text-3xl font-black uppercase tracking-tighter mb-6">Rewards Breakdown</h2>
         <p className="text-gray-500 font-medium mb-12 leading-relaxed">
-          Beyond financial rewards, winners receive global mentorship, incubation opportunities at PU-iNCENT, and direct access to industry leaders.
+          Participants may receive a combination of the following rewards structured to encourage learning, participation, and continuous improvement.
         </p>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-16">
           {[
-            "Cash Prizes", "Goodies & Swag", "Tech Subscriptions",
-            "Certificates", "Networking Opportunities", "Official Recognition"
+            "Achievement Certificates", "Official Recognition", "Event Merchandise",
+            "Special Access Benefits", "Tech Tools & Subs", "Mentorship Access",
+            "Internship Opportunities", "Ecosystem Exposure", "PU-iNCENT Guidance"
           ].map((item, i) => (
-            <div key={i} className="px-6 py-4 bg-gray-50 rounded-2xl text-[10px] font-black text-gray-600 uppercase tracking-widest border border-border hover:border-primary/20 hover:bg-white transition-all">
+            <div key={i} className="px-6 py-5 bg-gray-50 rounded-2xl text-[10px] font-black text-foreground uppercase tracking-widest border border-border hover:border-primary/20 hover:bg-white transition-all shadow-sm">
               {item}
             </div>
           ))}
         </div>
+
+        <p className="text-primary font-black uppercase tracking-tighter italic text-sm">
+           Recognition and rewards are structured to encourage learning, participation, and continuous improvement throughout the event.
+        </p>
       </AnimatedSection>
 
     </div>

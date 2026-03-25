@@ -86,14 +86,14 @@ const Announcements = () => {
     {
       icon: Megaphone,
       title: "Pass Registration",
-      content: "Pass registrations will open soon. Stay tuned to secure your entry for Prayogam 2k26.",
-      date: "REGISTRATIONS OPEN SOON"
+      content: "Participants can now secure their entry by obtaining the Transaction File Pass. Entry and participation are allowed only through a valid pass.",
+      date: "REGISTRATIONS ACTIVE"
     },
     {
       icon: Calendar,
       title: "Important Dates",
-      content: "Final Event Day: 18 April 2026. Be ready to showcase, explore, and experience.",
-      date: "18 April 2026"
+      content: "Screening Phase: 1 – 3 April 2026. Final Event Day: 18 April 2026. Note: Participants are advised to follow the schedule and prepare accordingly for each phase.",
+      date: "Key Timeline Updated"
     },
     {
       icon: MapPin,
@@ -104,7 +104,7 @@ const Announcements = () => {
     {
       icon: Bell,
       title: "Event Updates",
-      content: "New competitions and activities have been added. Check the Events page for details.",
+      content: "All activities, competitions, and participation-based events have been updated. Refer to the Events page for complete details.",
       date: "Latest"
     }
   ];
@@ -112,35 +112,35 @@ const Announcements = () => {
   const faqs = [
     {
       q: "How can I get a pass for Prayogam 2k26?",
-      a: "Passes will be available through our official registration link once the portal opens. Stay tuned for the announcement."
+      a: "Passes can be obtained through the official platform. The Transaction File Pass is required for participation."
     },
     {
       q: "Is registration required to attend the event?",
-      a: "Yes, every attendee must have a valid registration pass to enter the venue and participate in activities."
+      a: "Yes, a valid pass is required to enter and participate in Prayogam 2k26."
     },
     {
       q: "Where will the registration form be available?",
-      a: "The registration link will be updated here and on our official social media handles as soon as it goes live."
+      a: "The registration and pass access will be available through the official event platform."
     },
     {
       q: "Can I attend without a pass?",
-      a: "No, entries are restricted to pass holders only to ensure a smooth experience for everyone."
+      a: "No, entry is restricted to participants with a valid pass."
     },
     {
       q: "What should I bring for the event?",
-      a: "Carry a digital or printed copy of your pass and a valid student ID card. For technical activities, bringing your own laptop is recommended."
+      a: "Participants should carry their project materials, required setup, and identification."
     },
     {
       q: "Can I participate in multiple activities?",
-      a: "Absolutely! You can explore and participate in various exhibitions, quizzes, and Fun Zone activities throughout the day."
+      a: "Yes, participants can take part in multiple activities based on their interest and eligibility."
     },
     {
       q: "Will I get updates after registration?",
-      a: "Yes, once you register, you will receive all important notifications and event details via your registered email."
+      a: "Yes, important updates and instructions will be shared through official communication channels."
     },
     {
       q: "Who can attend Prayogam 2k26?",
-      a: "The event is open to all students, tech enthusiasts, and innovators looking to explore the latest technical projects."
+      a: "First-year students of the Faculty of Computer Engineering are eligible to participate."
     }
   ];
 
@@ -150,13 +150,13 @@ const Announcements = () => {
         
         <div className="text-center mb-16 px-4">
           <AnimatedText 
-            text="ANNOUNCEMENTS & UPDATES" 
+            text="Announcements & Updates" 
             el="h1" 
             className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tighter mb-4 md:whitespace-nowrap" 
           />
           <AnimatedSection direction="up" delay={0.2}>
             <p className="text-base sm:text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed font-bold uppercase tracking-widest">
-              Stay informed with the latest updates and find answers to common questions.
+              Stay informed with the latest updates and important information related to Prayogam 2k26.
             </p>
             <div className="w-20 h-1.5 bg-primary mx-auto mt-6 shadow-glow" />
           </AnimatedSection>

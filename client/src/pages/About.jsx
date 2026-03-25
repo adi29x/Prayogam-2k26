@@ -11,16 +11,23 @@ const AboutHero = () => (
         <h2 className="text-lg sm:text-xl md:text-2xl text-gray-500 font-bold mb-8 uppercase tracking-widest">The Flagship Event of the Era</h2>
         
         <p className="text-base sm:text-lg text-gray-700 leading-relaxed font-medium mb-8">
-          Prayogam 2k26 is a premier platform for technical project exhibitions. It is an immersive showcase of innovation, built for student developers who think, build, and execute at the highest level.
+          Prayogam 2k26 is a platform where first-year students get the opportunity to present what they have built. <br/><br/>
+          It is not just about showing projects, but about understanding how ideas work in real situations. <br/><br/>
+          Students come here to:
+          <ul className="mt-4 space-y-2 list-disc list-inside text-primary font-bold">
+            <li>Build something practical</li>
+            <li>Explain their work</li>
+            <li>Get feedback from mentors and experts</li>
+          </ul>
         </p>
 
         <div className="bg-gray-50 border border-border p-6 rounded-2xl mb-10">
           <div className="inline-block px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-sm font-bold text-primary tracking-wider uppercase mb-4 shadow-sm">
             Theme: Money Mystery 💸
           </div>
-          <p className="text-gray-600 font-medium">
-            This year’s event highlights the most innovative projects in software, hardware, and emerging technology.<br/><br/>
-            <strong className="text-foreground italic uppercase tracking-tighter">Code the future. Build the solutions. Control the game.</strong>
+          <p className="text-gray-600 font-medium leading-relaxed">
+            This year’s theme, Money Mystery, focuses on logic, strategy, and problem-solving in real-world systems. <br/><br/>
+            <span className="text-primary font-black uppercase tracking-widest text-xs block mb-2">Tagline: Build clearly. Think logically. Present confidently.</span>
           </p>
         </div>
 
@@ -29,7 +36,7 @@ const AboutHero = () => (
             Explore Events
           </Link>
           <Link to="/passes" className="block text-center w-full sm:w-auto border-2 border-foreground text-foreground px-8 py-4 rounded-full font-bold text-lg hover:bg-foreground hover:text-white transition-all">
-            Get Your Pass
+            Secure Your Pass
           </Link>
         </div>
       </AnimatedSection>
@@ -40,7 +47,7 @@ const AboutHero = () => (
           src="/about-new.jpg" 
           alt="Prayogam Tech Innovation"
           loading="lazy"
-          className="w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-1000 grayscale hover:grayscale-0"
+          className="w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-1000 grayscale group-hover:grayscale-0"
         />
         <div className="absolute inset-0 border border-white/10 rounded-3xl pointer-events-none z-20" />
       </AnimatedSection>
@@ -52,10 +59,10 @@ const StatsSection = () => (
   <section className="py-12 border-y border-border bg-gray-50 -mx-6 px-6 lg:-mx-20 lg:px-20 mb-24">
     <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
       {[
-        { val: "100+", label: "Projects" },
-        { val: "10+", label: "Domains" },
-        { val: "1K+", label: "Attendees" },
-        { val: "₹5L+", label: "Prize Pool" }
+        { val: "1K+", label: "Participants" },
+        { val: "₹5L+", label: "Prize Pool" },
+        { val: "10+", label: "Events" },
+        { val: "200+", label: "Projects" }
       ].map((stat, i) => (
         <AnimatedSection direction="up" delay={i * 0.1} key={i} className="text-center group">
           <div className="text-4xl md:text-5xl font-black mb-2 text-foreground group-hover:text-primary transition-colors">{stat.val}</div>
@@ -91,8 +98,8 @@ const EventDetailItem = ({ icon: Icon, title, value }) => (
     return (
       <section className="mb-24 px-4 md:px-0">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tighter mb-2">Event Details</h2>
-          <p className="text-gray-500 font-medium tracking-wide uppercase text-xs sm:text-sm">Everything you need to know before entering the system.</p>
+          <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tighter mb-2">Prayogam Tech Innovation</h2>
+          <p className="text-gray-500 font-medium tracking-wide uppercase text-xs sm:text-sm">Innovation in real-world systems.</p>
           <div className="w-12 h-1 bg-primary mx-auto mt-4" />
         </div>
   
@@ -113,13 +120,18 @@ const VisionSection = () => (
     <AnimatedSection direction="up" className="md:col-span-8 space-y-12">
       <div className="text-lg text-gray-700 leading-relaxed font-medium space-y-6">
         <p>
-          Prayogam aims to be the leading innovation platform where student developers showcase the projects and prototypes they have meticulously built.
+          Prayogam aims to become a strong platform where students can present their ideas and projects every year.
         </p>
         <p>
-          It is designed to nurture a culture of technical experimentation, creativity, and rigorous problem-solving—turning academic concepts into impactful reality.
+          It encourages students to:
+          <ul className="mt-4 space-y-2 list-disc list-inside text-primary font-bold">
+            <li>Try new ideas</li>
+            <li>Build real solutions</li>
+            <li>Learn by doing</li>
+          </ul>
         </p>
-        <p>
-          Our mission is to bridge the gap between classroom learning and the fast-paced world of technical development and industry standards.
+        <p className="font-bold text-foreground italic border-l-4 border-primary pl-4">
+          The goal is simple — turn what you learn in class into something useful and practical.
         </p>
       </div>
 
@@ -130,10 +142,22 @@ const VisionSection = () => (
           Collaborating with PU-iNCENT
         </h3>
         <p className="text-gray-300 leading-relaxed mb-4 relative z-10">
-          Prayogam is a vital part of the PU-iNCENT (Poornima University Incubation Center) ecosystem. We act as a talent discovery platform, helping exceptional student projects transition into mentorship and development phases.
+          Prayogam is connected with the PU-iNCENT (Poornima University Incubation Center).
         </p>
-        <p className="text-gray-300 leading-relaxed relative z-10">
-          By connecting students with the right expertise, we help transform technical prototypes into mature solutions.
+        <div className="space-y-3 mb-6 relative z-10">
+          {[
+            "Good projects can get further guidance",
+            "Students can improve their ideas",
+            "Some projects may even grow into startup ideas"
+          ].map((item, i) => (
+            <div key={i} className="flex items-center gap-3 text-sm font-medium text-gray-400">
+               <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+               {item}
+            </div>
+          ))}
+        </div>
+        <p className="text-white font-bold leading-relaxed relative z-10 italic border-t border-white/10 pt-4">
+          It helps students move from basic ideas to real solutions.
         </p>
       </div>
     </AnimatedSection>
@@ -148,10 +172,18 @@ const MissionSection = () => (
     <AnimatedSection direction="up" className="md:col-span-8 space-y-12">
       <div className="text-lg text-gray-700 leading-relaxed font-medium space-y-6">
         <p>
-          The mission of Prayogam 2k26 is to provide a structured platform for students to present their projects, demonstrate practical skills, and solve real-world problems.
+          The mission of Prayogam 2k26 is to give students a proper platform to:
+          <ul className="mt-4 space-y-2 list-disc list-inside text-primary font-bold">
+            <li>Present their projects</li>
+            <li>Improve their technical skills</li>
+            <li>Solve real-world problems</li>
+          </ul>
         </p>
         <p>
-          The event encourages students to move beyond theory and build meaningful, impactful solutions while gaining feedback from mentors, faculty, and industry experts.
+          Students are encouraged to move beyond theory and focus on building something that works.
+        </p>
+        <p className="font-bold text-foreground">
+          They also receive feedback from: Mentors, Faculty, and Industry experts.
         </p>
       </div>
 
@@ -161,10 +193,18 @@ const MissionSection = () => (
           The Impact We Create
         </h3>
         <p className="text-gray-600 leading-relaxed font-medium mb-4">
-          Prayogam fosters a strong culture of innovation and project-based learning within the university. It inspires students to transform academic projects into startup ideas by exposing them to mentorship, evaluation, and real-world challenges.
+          Prayogam helps students develop:
+          <ul className="mt-2 space-y-2 list-disc list-inside text-foreground font-black uppercase text-xs tracking-widest">
+            <li>Practical skills</li>
+            <li>Confidence in presenting ideas</li>
+            <li>Problem-solving ability</li>
+          </ul>
         </p>
-        <p className="text-gray-600 leading-relaxed font-medium">
-          The goal is to nurture future innovators, problem solvers, and entrepreneurs who can build impactful solutions.
+        <p className="text-gray-600 leading-relaxed font-medium mb-4">
+          It also encourages students to think about how their projects can be used in real life or developed further.
+        </p>
+        <p className="text-primary font-black uppercase tracking-tighter italic">
+          The goal is to build students who can create, improve, and innovate.
         </p>
       </div>
     </AnimatedSection>
@@ -205,8 +245,8 @@ const ObjectivesGrid = () => {
 
 const ProjectDomains = () => {
   const domains = [
-    "Fintech", "Blockchain", "Cybersecurity", 
-    "AI / ML", "Web & App Development", "Data Science"
+    "Web development", "App development", "AI/ML", 
+    "Core Engg.", "Cybersecurity", "Game Development"
   ];
 
   return (
@@ -233,8 +273,8 @@ const EventGuidelines = () => (
   <section className="mb-24 border-t border-border pt-24 px-4 md:px-0 text-center">
     <div className="max-w-3xl mx-auto space-y-8">
       <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tighter">Event Guidelines</h2>
-      <p className="text-lg text-gray-600 font-medium leading-relaxed italic">
-        "Participants must adhere to the professional standards of Prayogam 2k26. Quality of innovation and technical depth are the keys to success."
+      <p className="text-lg text-gray-600 font-medium leading-relaxed italic border-l-4 border-primary pl-6">
+        "Participants must follow the standards of Prayogam 2k26. Focus on originality, clarity, and proper implementation of your project."
       </p>
       
       <div className="pt-4">
@@ -251,6 +291,32 @@ const EventGuidelines = () => (
   </section>
 );
 
+const ParticipantInstructions = () => (
+  <section className="mb-24 px-4 md:px-0">
+    <div className="max-w-4xl mx-auto bg-white border border-border rounded-[2.5rem] p-8 md:p-12 shadow-sm relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-32 h-1 bg-primary" />
+      <h2 className="text-3xl font-black uppercase tracking-tight mb-8">Important Instructions for Participants</h2>
+      <ul className="space-y-6">
+        {[
+          <>A valid <span className="text-primary font-bold uppercase italic">Transaction File Pass is mandatory</span> for entry and participation in Prayogam 2k26</>,
+          "Participants must carry their pass confirmation and valid identification",
+          "Entry without a registered pass will not be permitted",
+          "Follow the official schedule and reporting times for each phase",
+          "Maintain proper documentation of your project (idea, implementation, and working model)",
+          "Ensure your system is functional and ready for live demonstration",
+          "Adhere to event rules, discipline, and evaluation guidelines"
+        ].map((item, i) => (
+          <li key={i} className="flex items-start gap-4 text-gray-700 font-medium text-sm md:text-base">
+            <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+);
+
+
 const About = () => {
   return (
     <div className="min-h-screen">
@@ -262,6 +328,7 @@ const About = () => {
       <ObjectivesGrid />
       <ProjectDomains />
       <EventGuidelines />
+      <ParticipantInstructions />
     </div>
   );
 };

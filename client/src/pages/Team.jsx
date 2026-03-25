@@ -31,7 +31,7 @@ const TeamCard = ({ name, role, image, size = 'sm', delay = 0 }) => {
     scaleClasses = "w-full";
     textClasses = "text-lg md:text-xl mb-0.5";
     roleClasses = "text-xs font-semibold text-gray-500";
-    aspectClasses = "aspect-square";
+    aspectClasses = "aspect-[4/5]";
   }
 
   return (
@@ -171,32 +171,20 @@ const Team = () => {
           />
         </div>
 
-        {/* --- 5. FUNCTIONAL TEAMS --- */}
-        <div className="max-w-6xl mx-auto border-t border-border pt-12">
-          <SectionDivider title="Core Functional Teams" />
+        {/* --- 5. CORE FUNCTIONAL TEAM GRID --- */}
+        <div className="max-w-6xl mx-auto border-t border-border pt-12 mt-32">
+          <SectionDivider title="Core Functional Team" />
 
-          <div className="space-y-24">
-            {hierarchyData.teams.map((group, groupIdx) => (
-              <div key={groupIdx}>
-                <h3 className="text-2xl font-black uppercase tracking-tight text-foreground mb-8 text-center flex items-center justify-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
-                  {group.category}
-                  <div className="w-2 h-2 rounded-full bg-primary" />
-                </h3>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center">
-                  {group.members.map((member, idx) => (
-                    <TeamCard 
-                      key={idx} 
-                      name={member.name} 
-                      role={member.role} 
-                      image={member.image} 
-                      size="sm"
-                      delay={idx * 0.1}
-                    />
-                  ))}
-                </div>
-              </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+            {hierarchyData.teams.flatMap(group => group.members).map((member, idx) => (
+              <TeamCard 
+                key={idx} 
+                name={member.name} 
+                role={member.role} 
+                image={member.image} 
+                size="sm"
+                delay={idx * 0.05}
+              />
             ))}
           </div>
         </div>

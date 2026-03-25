@@ -52,7 +52,7 @@ const EventDetail = () => {
               rel="noopener noreferrer"
               className="bg-primary text-white font-bold py-3 px-8 rounded-full shadow-[0_4px_14px_rgba(255,0,0,0.39)] hover:shadow-[0_6px_20px_rgba(255,0,0,0.39)] hover:-translate-y-1 transition-all duration-200 whitespace-nowrap"
             >
-              Register Now
+              Secure Your Pass
             </a>
           </div>
 

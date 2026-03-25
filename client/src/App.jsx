@@ -20,6 +20,12 @@ const ContactSponsors = lazy(() => import('./pages/ContactSponsors'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Announcements = lazy(() => import('./pages/Announcements'));
 const Prizes = lazy(() => import('./pages/Prizes'));
+const Leaderboard = lazy(() => import('./pages/Leaderboard'));
+const ClassRepSystem = lazy(() => import('./pages/leaderboard/ClassRepSystem'));
+const ReferralChain = lazy(() => import('./pages/leaderboard/ReferralChain'));
+const InfluencerClash = lazy(() => import('./pages/leaderboard/InfluencerClash'));
+const ReelCompetition = lazy(() => import('./pages/leaderboard/ReelCompetition'));
+const ProjectSelections = lazy(() => import('./pages/leaderboard/ProjectSelections'));
 
 const PageWrapper = ({ children }) => {
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
@@ -79,6 +85,12 @@ function App() {
               <Route path="/sponsors" element={<PageWrapper><Sponsors /></PageWrapper>} />
               <Route path="/contact-sponsors" element={<PageWrapper><ContactSponsors /></PageWrapper>} />
               <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
+              <Route path="/leaderboard" element={<PageWrapper><Leaderboard /></PageWrapper>} />
+              <Route path="/leaderboard/class-rep-system" element={<PageWrapper><ClassRepSystem /></PageWrapper>} />
+              <Route path="/leaderboard/referral-chain" element={<PageWrapper><ReferralChain /></PageWrapper>} />
+              <Route path="/leaderboard/influencer-clash" element={<PageWrapper><InfluencerClash /></PageWrapper>} />
+              <Route path="/leaderboard/reel-competition" element={<PageWrapper><ReelCompetition /></PageWrapper>} />
+              <Route path="/leaderboard/project-selections" element={<PageWrapper><ProjectSelections /></PageWrapper>} />
               <Route path="/announcements" element={<PageWrapper><Announcements /></PageWrapper>} />
               <Route path="/prizes" element={<PageWrapper><Prizes /></PageWrapper>} />
             </Routes>
