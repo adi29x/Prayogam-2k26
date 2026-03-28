@@ -21,8 +21,8 @@ const Contact = lazy(() => import('./pages/Contact'));
 const Announcements = lazy(() => import('./pages/Announcements'));
 const Prizes = lazy(() => import('./pages/Prizes'));
 const Leaderboard = lazy(() => import('./pages/Leaderboard'));
-const ClassRepSystem = lazy(() => import('./pages/leaderboard/ClassRepSystem'));
-const ReferralChain = lazy(() => import('./pages/leaderboard/ReferralChain'));
+const CashQuestEventPage = lazy(() => import('./pages/events/CashQuest2026'));
+const CashQuest2026 = lazy(() => import('./pages/leaderboard/CashQuest2026'));
 const InfluencerClash = lazy(() => import('./pages/leaderboard/InfluencerClash'));
 const ReelCompetition = lazy(() => import('./pages/leaderboard/ReelCompetition'));
 const ProjectSelections = lazy(() => import('./pages/leaderboard/ProjectSelections'));
@@ -77,6 +77,7 @@ function App() {
             <Routes location={location} key={location.pathname}>
               <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
               <Route path="/events" element={<PageWrapper><Events /></PageWrapper>} />
+              <Route path="/events/cash-quest-2k26" element={<PageWrapper><CashQuestEventPage /></PageWrapper>} />
               <Route path="/events/:eventName" element={<PageWrapper><EventDetail /></PageWrapper>} />
               <Route path="/passes" element={<PageWrapper><Passes /></PageWrapper>} />
               <Route path="/team" element={<PageWrapper><Team /></PageWrapper>} />
@@ -86,8 +87,7 @@ function App() {
               <Route path="/contact-sponsors" element={<PageWrapper><ContactSponsors /></PageWrapper>} />
               <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
               <Route path="/leaderboard" element={<PageWrapper><Leaderboard /></PageWrapper>} />
-              <Route path="/leaderboard/class-rep-system" element={<PageWrapper><ClassRepSystem /></PageWrapper>} />
-              <Route path="/leaderboard/referral-chain" element={<PageWrapper><ReferralChain /></PageWrapper>} />
+              <Route path="/leaderboard/cash-quest-2k26" element={<PageWrapper><CashQuest2026 /></PageWrapper>} />
               <Route path="/leaderboard/influencer-clash" element={<PageWrapper><InfluencerClash /></PageWrapper>} />
               <Route path="/leaderboard/reel-competition" element={<PageWrapper><ReelCompetition /></PageWrapper>} />
               <Route path="/leaderboard/project-selections" element={<PageWrapper><ProjectSelections /></PageWrapper>} />

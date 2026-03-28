@@ -54,7 +54,7 @@ const TeamCard = ({ name, role, image, size = 'sm', delay = 0 }) => {
         <p className={`${roleClasses} uppercase tracking-wide`}>
           {role}
         </p>
-        <div className="w-0 h-0.5 bg-primary mx-auto mt-4 group-hover:w-12 transition-all duration-500 shadow-glow" />
+        <div className="w-0 h-0.5 bg-primary mx-auto mt-4 group-hover:w-12 transition-all duration-500" />
       </div>
     </MotionCard>
   );
@@ -72,12 +72,12 @@ const Team = () => {
   const hierarchyData = {
     chief: { name: "Aditya Kapoor", role: "Chief Event Director", image: "/team/aditya.jpg" },
     director: { name: "Himanshu Sharma", role: "Event Director", image: "/team/himanshu.jpg" },
-    deputies: [
+    leadershipRow: [
       { name: "Kanishtha Madaan", role: "Deputy Event Director", image: "/team/kanishtha.jpg" },
-      { name: "Himanshu Sharma", role: "Deputy Event Director", image: "/team/himanshu_sgs.jpg" }
+      { name: "Himanshu Sharma", role: "Deputy Event Director", image: "/team/himanshu_sgs.jpg" },
+      { name: "Prisha Jain", role: "Assistant Deputy Event Director", image: "/team/prisha.png" }
     ],
-    assistant: { name: "Prisha Jain", role: "Assistant Deputy Event Director", image: "/team/prisha.png" },
-    teams: [
+    organizingTeam: [
       {
         category: "MARKETING",
         members: [
@@ -116,67 +116,83 @@ const Team = () => {
         
         {/* PAGE HEADER */}
         <div className="text-center mb-24">
-          <AnimatedText text="CORE TEAM" el="h1" className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter mb-4" />
+          <AnimatedText text="OUR TEAM" el="h1" className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter mb-4" />
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Meet the minds behind Prayogam 2k26 — a system built by leaders, strategists, and creators.
+              The collaborative force driving Prayogam 2k26 — a blend of wisdom, leadership, and execution.
             </p>
           </motion.div>
         </div>
 
-        {/* --- 1. CHIEF EVENT DIRECTOR --- */}
-        <div className="mb-20">
-          <SectionDivider title="Executive Leadership" />
-          <TeamCard 
-            name={hierarchyData.chief.name} 
-            role={hierarchyData.chief.role} 
-            image={hierarchyData.chief.image} 
-            size="xl" 
-          />
-        </div>
-
-        {/* --- 2. EVENT DIRECTOR --- */}
-        <div className="mb-20">
-          <TeamCard 
-            name={hierarchyData.director.name} 
-            role={hierarchyData.director.role} 
-            image={hierarchyData.director.image} 
-            size="lg" 
-          />
-        </div>
-
-        {/* --- 3. DEPUTY EVENT DIRECTORS --- */}
-        <div className="mb-20 flex justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
-            {hierarchyData.deputies.map((deputy, idx) => (
-              <TeamCard 
-                key={idx} 
-                name={deputy.name} 
-                role={deputy.role} 
-                image={deputy.image} 
-                size="md"
-                delay={idx * 0.15}
-              />
-            ))}
+        {/* --- 1. FACULTY TEAM (NEW) --- */}
+        <div className="mb-32">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-4 text-foreground">Faculty Team</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">Guiding the vision, structure, and execution of Prayogam 2k26.</p>
+          </div>
+          <div className="max-w-4xl mx-auto bg-gray-50/50 border border-border/50 rounded-[2.5rem] p-12 text-center group hover:border-primary/30 transition-all duration-500">
+            <div className="w-16 h-1 bg-primary/20 mx-auto mb-6 group-hover:w-24 group-hover:bg-primary transition-all duration-500" />
+            <p className="text-2xl md:text-3xl font-black text-gray-400 uppercase tracking-tighter italic">
+              To be announced soon
+            </p>
+            <p className="text-xs text-gray-500 mt-4 uppercase tracking-[0.2em] font-bold">Stay connected for updates</p>
           </div>
         </div>
 
-        {/* --- 4. ASSISTANT DEPUTY EVENT DIRECTOR --- */}
+        {/* --- 2. STUDENT ORGANIZING TEAM --- */}
         <div className="mb-32">
-          <TeamCard 
-            name={hierarchyData.assistant.name} 
-            role={hierarchyData.assistant.role} 
-            image={hierarchyData.assistant.image} 
-            size="md" 
-          />
+          <SectionDivider title="Student Organizing Team" />
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-4 text-foreground">The Leadership</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">The core student team leading the strategy, operations, and experience of Prayogam 2k26.</p>
+          </div>
+          
+          {/* Executive Leadership */}
+          <div className="mb-20">
+            <TeamCard 
+              name={hierarchyData.chief.name} 
+              role={hierarchyData.chief.role} 
+              image={hierarchyData.chief.image} 
+              size="xl" 
+            />
+          </div>
+
+          {/* Event Director */}
+          <div className="mb-20">
+            <TeamCard 
+              name={hierarchyData.director.name} 
+              role={hierarchyData.director.role} 
+              image={hierarchyData.director.image} 
+              size="lg" 
+            />
+          </div>
+
+          {/* Leadership Row (3 in a row) */}
+          <div className="flex justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-6xl mx-auto px-4">
+              {hierarchyData.leadershipRow.map((leader, idx) => (
+                <TeamCard 
+                  key={idx} 
+                  name={leader.name} 
+                  role={leader.role} 
+                  image={leader.image} 
+                  size="lg"
+                  delay={idx * 0.1}
+                />
+              ))}
+            </div>
+          </div>
         </div>
 
-        {/* --- 5. CORE FUNCTIONAL TEAM GRID --- */}
-        <div className="max-w-6xl mx-auto border-t border-border pt-12 mt-32">
-          <SectionDivider title="Core Functional Team" />
+        {/* --- 3. ORGANIZING TEAM (Renamed) --- */}
+        <div className="max-w-6xl mx-auto border-t border-border pt-20 mt-32">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-4 text-foreground">Organizing Team</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">The student team driving execution, operations, and experience.</p>
+          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-            {hierarchyData.teams.flatMap(group => group.members).map((member, idx) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 px-4">
+            {hierarchyData.organizingTeam.flatMap(group => group.members).map((member, idx) => (
               <TeamCard 
                 key={idx} 
                 name={member.name} 

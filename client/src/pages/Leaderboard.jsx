@@ -6,16 +6,10 @@ import AnimatedText from '../components/animations/AnimatedText';
 const Leaderboard = () => {
   const categories = [
     {
-      title: "Class Rep System",
-      route: "/leaderboard/class-rep-system",
-      description: "Track the performance of class representatives across different departments.",
+      title: "Cash Quest 2k26",
+      route: "/leaderboard/cash-quest-2k26",
+      description: "Track the performance of participants across event promotion and engagement activities.",
       icon: Users,
-    },
-    {
-      title: "Referral Chain",
-      route: "/leaderboard/referral-chain",
-      description: "Live rankings for the top growth hackers and referral champions.",
-      icon: Share2,
     },
     {
       title: "Influencer Clash",

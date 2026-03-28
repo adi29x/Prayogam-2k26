@@ -44,7 +44,7 @@ const AboutHero = () => (
       <AnimatedSection direction="left" delay={0.2} className="relative w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] group">
         <div className="absolute inset-0 bg-gradient-to-tr from-foreground/80 via-transparent to-transparent z-10" />
         <img 
-          src="/about-new.jpg" 
+          src="/about-vision.jpg" 
           alt="Prayogam Tech Innovation"
           loading="lazy"
           className="w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-1000 grayscale group-hover:grayscale-0"

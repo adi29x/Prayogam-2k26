@@ -103,12 +103,12 @@ const Events = () => {
       image: null
     },
     {
-      title: "Class Rep System",
+      title: "Cash Quest 2k26",
       category: "Marketing",
-      subtitle: "Top Promoter",
-      description: "Promote Prayogam across your class and network. Rankings are based on performance and reach.",
-      recognition: "Post + Story + Highlight + Leaderboard Post",
-      rewards: "Goodies + Wildcard Pass + Certificate",
+      subtitle: "The Ultimate CR System",
+      description: "A premium, gamified class representative competition where performance, creativity, and reach lead to massive recognition.",
+      recognition: "Daily Top 3 + Final Stage Recognition + Official Features",
+      rewards: "Wildcard Pass + Tech Swag + Exclusive Networking + Certificates",
       image: null
     },
     {
@@ -121,15 +121,6 @@ const Events = () => {
       image: null
     },
     {
-      title: "Referral Chain",
-      category: "Marketing",
-      subtitle: "Growth Hacker",
-      description: "Bring maximum participants through your referral chain and move up the leaderboard.",
-      recognition: "Leaderboard Post + Post + Story + Highlight",
-      rewards: "Certificate + Pass",
-      image: null
-    },
-    {
       title: "Influencer Clash",
       category: "Content",
       subtitle: "Top Influencer",
@@ -137,105 +128,6 @@ const Events = () => {
       recognition: "Post + Story + Highlight + Announcement",
       rewards: "Certificate + Wildcard Pass",
       image: null
-    },
-    {
-      title: "The Code Enigma",
-      category: "Tech",
-      subtitle: "Code Breaker",
-      description: "Find and solve hidden codes and logical patterns placed across the system.",
-      recognition: "Post + Story + Highlight",
-      rewards: "Wildcard Pass",
-      image: null
-    },
-    {
-      title: "Debug Challenge",
-      category: "Tech",
-      subtitle: "Master Decoder",
-      description: "Break down problems, identify errors, and solve structured decoding challenges.",
-      recognition: "Post + Story + Highlight",
-      rewards: "Wildcard Pass",
-      image: null
-    },
-    { 
-      title: "Innovation Hunt", 
-      category: "Fun", 
-      subtitle: "Best Moment",
-      description: "Capture and share the most interesting and meaningful moments during the event.", 
-      recognition: "Post + Story + Highlight",
-      rewards: "—",
-      isFun: true 
-    },
-    { 
-      title: "Tech Capture", 
-      category: "Fun", 
-      subtitle: "Best Reel / Moment",
-      description: "Create content at the photo and reel booth and showcase your perspective of Prayogam.", 
-      recognition: "Post + Story + Highlight",
-      rewards: "—",
-      isFun: true 
-    },
-    { 
-      title: "Spin the Tech-Wheel", 
-      category: "Fun", 
-      subtitle: "Lucky Player",
-      description: "Spin and unlock random rewards. Some spins may grant rare access benefits.", 
-      recognition: "Story (mass) + Highlight (optional)",
-      rewards: "Small Goodies + Rare Wildcard Pass",
-      isFun: true 
-    },
-    { 
-      title: "Logic Quiz", 
-      category: "Fun", 
-      subtitle: "Quick Trigger",
-      description: "Answer fast-paced questions based on logic and observation.", 
-      recognition: "Post + Story + Highlight",
-      rewards: "Small Goodies",
-      isFun: true 
-    },
-    { 
-      title: "Dev Survival", 
-      category: "Fun", 
-      subtitle: "Truth Identifier",
-      description: "Participate in interactive rounds where understanding and decision-making are tested.", 
-      recognition: "Post + Story + Highlight",
-      rewards: "Small Goodies",
-      isFun: true 
-    },
-    { 
-      title: "The Tech Debate", 
-      category: "Fun", 
-      subtitle: "Decision Maker",
-      description: "Choose your side and defend your thinking in structured discussions.", 
-      recognition: "Post + Story + Highlight",
-      rewards: "Small Goodies",
-      isFun: true 
-    },
-    { 
-      title: "Rapid Code", 
-      category: "Fun", 
-      subtitle: "Precision Predictor",
-      description: "Answer structured questions requiring multiple correct responses.", 
-      recognition: "Post + Story + Highlight",
-      rewards: "Small Goodies",
-      isFun: true 
-    },
-    { 
-      title: "Tech Valuation", 
-      category: "Fun", 
-      subtitle: "Market Predictor",
-      description: "Estimate values, outcomes, or logic-based scenarios accurately.", 
-      recognition: "Post + Story + Highlight",
-      rewards: "Small Goodies",
-      isFun: true 
-    },
-    { 
-      title: "Open Stage", 
-      category: "Content", 
-      subtitle: "Best Speaker of the Event",
-      description: "(Open for All) Present your thoughts, ideas, or experiences clearly in front of an audience.", 
-      recognition: "Post + Story + Highlight + Announcement",
-      rewards: "Certificate + Recognition (+ Optional Goodies)",
-      isFun: true 
     }
   ];
 

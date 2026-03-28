@@ -160,7 +160,7 @@ const Home = () => {
       <section className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         <AnimatedSection direction="left" className="aspect-square bg-foreground rounded-3xl relative overflow-hidden group shadow-lg">
           <img
-            src="/about-new.jpg"
+            src="/about-home.jpg"
             alt="The Money Mystery"
             className="w-full h-full object-cover grayscale opacity-60 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700"
           />
@@ -303,7 +303,6 @@ const Home = () => {
       <section>
         <div className="flex justify-between items-end mb-12">
           <h2 className="text-3xl font-bold tracking-tight max-w-sm">Builders who showcased their innovation last year.</h2>
-          <span className="hidden md:block text-primary font-bold hover:underline cursor-pointer">View All Success Stories →</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -324,45 +323,48 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 9. PAST EVENT GALLERY */}
-      <section className="py-8">
-        <div className="text-center mb-12">
+      {/* 9. PAST EVENT GALLERY (INFINITE CAROUSEL) */}
+      <section className="py-12 overflow-hidden">
+        <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tighter mb-4">Past Event Glimpses</h2>
           <p className="text-base sm:text-lg text-gray-600 font-medium">Moments from previous Prayogam editions.</p>
           <div className="w-12 h-1 bg-primary mx-auto mt-4" />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {[
-            { url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80", alt: "Hackathon Night" },
-            { url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80", alt: "Tech Exhibition" },
-            { url: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80", alt: "Team Collaboration" },
-            { url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80", alt: "Keynote Session" }
-          ].map((img, i) => (
-            <AnimatedSection
-              key={i}
-              direction="up"
-              delay={i * 0.1}
-              className="group overflow-hidden rounded-2xl border border-border aspect-[4/3] bg-gray-100 flex items-center justify-center relative shadow-none"
-            >
-              {/* Image with fallback and lazy loading */}
-              <img
-                src={img.url}
-                alt={img.alt}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-[1.03]"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=400&h=300&auto=format&fit=crop";
-                }}
-              />
-              {/* Subtle overlay for context on hover */}
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
-                <p className="text-white text-xs font-bold uppercase tracking-widest">{img.alt}</p>
+        <div className="relative group">
+          <style>
+            {`
+              @keyframes infinite-scroll {
+                from { transform: translateX(0); }
+                to { transform: translateX(calc(-100% / 2)); }
+              }
+              .carousel-track {
+                display: flex;
+                width: max-content;
+                animation: infinite-scroll 600s linear infinite;
+              }
+              .carousel-track:hover {
+                animation-play-state: paused;
+              }
+            `}
+          </style>
+          <div className="carousel-track flex gap-4 md:gap-6 px-4">
+            {/* We duplicate the array for seamless scrolling */}
+            {[...Object.values(import.meta.glob('../assets/pics/*.{jpg,JPG,jpeg,png,svg}', { eager: true, import: 'default' })), 
+              ...Object.values(import.meta.glob('../assets/pics/*.{jpg,JPG,jpeg,png,svg}', { eager: true, import: 'default' }))].map((imgUrl, i) => (
+              <div 
+                key={i} 
+                className="flex-shrink-0 w-[45vw] sm:w-[30vw] lg:w-[22vw] aspect-[4/3] rounded-2xl overflow-hidden border border-border group/card transition-all duration-500"
+              >
+                <img
+                  src={imgUrl}
+                  alt={`Event Moment ${i}`}
+                  loading="lazy"
+                  className="w-full h-full object-cover grayscale group-hover/card:grayscale-0 group-hover/card:scale-105 transition-all duration-700"
+                />
               </div>
-            </AnimatedSection>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
