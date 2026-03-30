@@ -7,7 +7,7 @@ const InfluencerClash = () => {
   return (
     <div className="min-h-screen py-12 px-4 md:px-0">
       <div className="text-center mb-16">
-        <AnimatedText text="Influencer Clash" spanText="Clash" spanClass="text-primary" el="h1" className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter mb-4 uppercase" />
+        <AnimatedText text="Influencer Clash 2k26" spanText="Leaderboard" spanClass="text-primary" el="h1" className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter mb-4 uppercase" />
         <AnimatedSection direction="up" delay={0.2}>
           <p className="text-base sm:text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed font-bold uppercase tracking-widest">
             Global reach and engagement rankings for internal system influencers.

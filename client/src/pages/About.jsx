@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { MapPin, Calendar, Hourglass, Users, Lightbulb, Brain } from 'lucide-react';
 import AnimatedSection from '../components/animations/AnimatedSection';
@@ -269,27 +271,61 @@ const ProjectDomains = () => {
   );
 };
 
-const EventGuidelines = () => (
-  <section className="mb-24 border-t border-border pt-24 px-4 md:px-0 text-center">
-    <div className="max-w-3xl mx-auto space-y-8">
-      <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tighter">Event Guidelines</h2>
-      <p className="text-lg text-gray-600 font-medium leading-relaxed italic border-l-4 border-primary pl-6">
-        "Participants must follow the standards of Prayogam 2k26. Focus on originality, clarity, and proper implementation of your project."
-      </p>
-      
-      <div className="pt-4">
-        <a 
-          href="#" 
-          onClick={(e) => e.preventDefault()}
-          className="inline-flex items-center gap-3 bg-foreground text-white border-2 border-foreground px-10 py-4 rounded-full font-black uppercase tracking-widest text-sm hover:bg-primary hover:border-primary transition-all group shadow-sm"
-        >
-          Download Guidelines Document
-          <div className="w-2 h-2 rounded-full bg-white group-hover:bg-white animate-pulse" />
-        </a>
+const EventGuidelines = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [showModal]);
+
+  return (
+    <section className="mb-24 border-t border-border pt-24 px-4 md:px-0 text-center relative">
+      <div className="max-w-3xl mx-auto space-y-8">
+        <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tighter">Event Guidelines</h2>
+        <p className="text-lg text-gray-600 font-medium leading-relaxed italic border-l-4 border-primary pl-6">
+          "Participants must follow the standards of Prayogam 2k26. Focus on originality, clarity, and proper implementation of your project."
+        </p>
+        
+        <div className="pt-4">
+          <button 
+            onClick={() => setShowModal(true)}
+            className="inline-flex items-center gap-3 bg-foreground text-white border-2 border-foreground px-10 py-4 rounded-full font-black uppercase tracking-widest text-sm hover:bg-primary hover:border-primary transition-all group shadow-sm"
+          >
+            Download Guidelines Document
+            <div className="w-2 h-2 rounded-full bg-white group-hover:bg-white animate-pulse" />
+          </button>
+        </div>
       </div>
-    </div>
-  </section>
-);
+
+      {/* MODAL */}
+      {showModal && createPortal(
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+          <div 
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer" 
+            onClick={() => setShowModal(false)}
+          />
+          <div className="relative bg-white w-full max-w-sm rounded-[2rem] p-10 text-center shadow-2xl">
+            <button 
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-50 hover:bg-gray-100 text-gray-500 hover:text-black transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+            <h3 className="text-2xl font-black uppercase tracking-tighter mt-2 mb-4">Guidelines</h3>
+            <p className="text-gray-500 font-bold uppercase tracking-widest text-sm">To be announced</p>
+            <div className="w-8 h-1 bg-primary mx-auto mt-6" />
+          </div>
+        </div>,
+        document.body
+      )}
+    </section>
+  );
+};
 
 const ParticipantInstructions = () => (
   <section className="mb-24 px-4 md:px-0">

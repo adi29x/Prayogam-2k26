@@ -48,10 +48,12 @@ const Prizes = () => {
     }
   ];
 
-  const recognitionTitles = [
-    { title: "Top Promoter", event: "Cash Quest 2k26", color: "text-primary" },
-    { title: "Top Creators", event: "Reel Competition", color: "text-primary" },
-    { title: "Top Influencer", event: "Influencer Clash", color: "text-primary" }
+  const eventRecognitions = [
+    { event: "CASH QUEST 2K26 (Marketing)", title: "Growth Strategist of Prayogam 2K26" },
+    { event: "REELS MAKING COMPETITION 2K26 (Content)", title: "Content Creator of Prayogam 2K26" },
+    { event: "INFLUENCER CLASH 2K26 (Content)", title: "Influencer of Prayogam 2K26" },
+    { event: "QR HUNT 2K26 (Marketing/Game)", title: "Treasure Hunter of Prayogam 2K26" },
+    { event: "THE MONEY SHOT 2K26 (Content)", title: "Creative Director of Prayogam 2K26" }
   ];
 
   return (
@@ -96,12 +98,11 @@ const Prizes = () => {
             Specific titles awarded for individual event performance and consistent engagement.
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {recognitionTitles.map((item, i) => (
-              <div key={i} className="bg-white/5 border border-white/10 p-8 rounded-2xl text-center group hover:border-primary/50 transition-all">
-                <div className="text-[10px] font-black uppercase tracking-widest text-primary mb-3 opacity-50 group-hover:opacity-100 transition-opacity italic">Recognition Title</div>
-                <div className="text-2xl font-black text-gray-200 group-hover:text-white transition-colors mb-2">{item.title}</div>
-                <div className="text-[10px] font-bold text-gray-500 uppercase tracking-widest leading-relaxed">Activity: {item.event}</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {eventRecognitions.map((item, i) => (
+              <div key={i} className="bg-white/5 border border-white/10 p-6 md:p-8 rounded-[2rem] text-center flex flex-col justify-center h-full group hover:border-primary/50 transition-all hover:-translate-y-1">
+                <div className="text-lg md:text-xl font-bold text-white mb-2 tracking-tight leading-snug drop-shadow-sm">{item.title}</div>
+                <div className="text-[9px] md:text-[10px] font-black text-primary uppercase tracking-[0.2em] opacity-90">{item.event}</div>
               </div>
             ))}
           </div>

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Target, Users, Shield, Clock, AlertTriangle, 
-  Trophy, Star, Share2, Clapperboard, BarChart3, 
+  Trophy, Star, Share2, Clapperboard, BarChart, BarChart3,
   TrendingUp, Zap, ChevronRight, CheckCircle2,
   ArrowLeft, Download, FileText, Scale, Gavel,
   CheckCircle, XCircle
@@ -121,7 +121,7 @@ const CashQuest2026 = () => {
 
         {/* PAGE HEADER */}
         <div className="mb-24">
-          <AnimatedText text="Cash Quest 2k26" el="h1" className="text-5xl md:text-9xl font-black tracking-tighter mb-4 uppercase leading-[0.85]" />
+          <AnimatedText text="CASH QUEST 2K26" el="h1" className="text-5xl md:text-9xl font-black tracking-tighter mb-4 uppercase leading-[0.85]" />
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
             <p className="text-lg md:text-2xl text-gray-500 font-bold uppercase tracking-widest italic">
               OFFICIAL RULEBOOK & CR SYSTEM <span className="text-primary mx-3">/</span> <span className="text-foreground">PRAYOGAM 2K26</span>
@@ -195,13 +195,17 @@ const CashQuest2026 = () => {
 
         {/* SECTION 3: WORKFLOW */}
         <AnimatedSection direction="up" className="mb-24">
-          <SectionHeader icon={Clock} title="03. Daily Workflow" />
+          <SectionHeader icon={Clock} title="03. Competition Structure" />
+          <div className="bg-white border border-border p-10 rounded-[3rem] mb-12">
+            <p className="text-lg font-bold text-foreground mb-4">The competition will be conducted over <span className="text-primary italic uppercase">3 Intense Days</span>.</p>
+            <p className="text-sm text-gray-500 font-medium">Participation on all three days is mandatory for leaderboard eligibility. Daily tasks include content creation, promotion, and engagement activities.</p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
             {[
-              { time: "Morning", title: "Theme release", desc: "Daily themes or content directions shared (optional)", color: "bg-gray-50" },
+              { time: "Morning", title: "Theme release", desc: "Daily themes or content directions shared", color: "bg-gray-50" },
               { time: "During Day", title: "Execution", desc: "CRs create, publish, and promote content", color: "bg-gray-50" },
-              { time: "8:00 PM", title: "Deadline", desc: "Strict cut-off for daily submissions", color: "bg-red-50" },
-              { time: "8-10 PM", title: "Verification", desc: "Core team validation window", color: "bg-gray-50" },
+              { time: "8:00 PM", title: "Deadline", desc: "Strict cut-off for daily submissions. NO late entries.", color: "bg-red-50" },
+              { time: "8-10 PM", title: "Verification", desc: "Core team manual validation window", color: "bg-gray-50" },
               { time: "Next 8 AM", title: "Update", desc: "Leaderboard update on official platforms", color: "bg-green-50" }
             ].map((step, i) => (
               <div key={i} className={`${step.color} p-8 rounded-3xl border border-border group hover:border-primary/20 transition-all`}>
@@ -215,17 +219,46 @@ const CashQuest2026 = () => {
 
         {/* SECTION 4: PARTICIPATION REQUIREMENTS */}
         <AnimatedSection direction="up" className="mb-24">
-          <SectionHeader icon={Shield} title="04. Daily Participation" />
-          <div className="bg-red-50 border border-primary/20 rounded-[3rem] p-10 md:p-16">
+          <SectionHeader icon={Shield} title="04. Participation & Eligibility" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <RuleCard title="Eligibility Criteria" icon={CheckCircle}>
+               {[
+                 "Open to all selected Class Representatives (CRs)",
+                 "Participation is class-based through assigned representatives",
+                 "Each CR must use their primary social media account",
+                 "All activities must comply with the competition rules"
+               ].map((item, i) => (
+                 <div key={i} className="flex items-start gap-3">
+                   <CheckCircle2 size={16} className="text-primary mt-1 flex-shrink-0" />
+                   <p>{item}</p>
+                 </div>
+               ))}
+            </RuleCard>
+            <div className="bg-red-50 border border-primary/40 rounded-[2.5rem] p-8 md:p-12 flex flex-col justify-center">
+               <div className="flex items-center gap-4 mb-6 text-primary">
+                 <AlertTriangle size={32} />
+                 <h3 className="text-2xl font-black uppercase tracking-tight">CR ACCESS MANDATE</h3>
+               </div>
+               <p className="text-sm font-bold text-red-900 leading-relaxed mb-6 italic underline uppercase">
+                 🚨 Transaction File Pass is mandatory for all CRs to participate in Cash Quest 2k26.
+               </p>
+               <p className="text-xs text-red-800/80 font-medium leading-relaxed">
+                 Failure to secure your Transaction File Pass will result in immediate exclusion from the leaderboard and prize eligibility.
+               </p>
+            </div>
+          </div>
+
+          <div className="bg-white border border-border rounded-[3rem] p-10 md:p-16">
              <div className="flex flex-col md:flex-row gap-12 items-start">
                <div className="flex-1">
-                 <h3 className="text-2xl font-black uppercase mb-8">To qualify for daily scoring:</h3>
+                 <h3 className="text-2xl font-black uppercase mb-8">Daily Scoring Requirements:</h3>
                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
                     {[
                       "Share at least one official Prayogam post",
-                      "Create and upload at least one original reel/story",
+                      "Create and upload at least one original reel",
                       "Use the official hashtag #Prayogam2k26",
-                      "Tag the official Prayogam account"
+                      "Tag the official Prayogam/iNCENT account",
+                      "Share content on story and tag the official page"
                     ].map((req, i) => (
                       <div key={req} className="flex gap-4 items-center font-bold text-gray-700">
                         <div className="w-1.5 h-1.5 rounded-full bg-primary" />
@@ -234,11 +267,11 @@ const CashQuest2026 = () => {
                     ))}
                  </div>
                </div>
-               <div className="w-full md:w-80 bg-white p-8 rounded-[2rem] border border-primary shadow-sm">
-                  <AlertTriangle className="text-primary mb-4" size={32} />
-                  <h4 className="text-lg font-black uppercase tracking-tight mb-2 text-red-600 italic">Mandatory Rule</h4>
-                  <p className="text-xs font-medium text-red-900 leading-relaxed">
-                    Failure to complete the minimum daily requirements (1 reel + 1 official share) will result in <span className="font-black underline uppercase">zero points</span> for the entire day.
+               <div className="w-full md:w-80 bg-red-600 text-white p-8 rounded-[2rem] shadow-glow">
+                  <AlertTriangle className="text-white mb-4" size={32} />
+                  <h4 className="text-lg font-black uppercase tracking-tight mb-2 italic">Mandatory Task</h4>
+                  <p className="text-xs font-medium leading-relaxed">
+                    Failure to complete the minimum daily requirements (one reel + one official share) will result in <span className="font-black underline uppercase">zero points</span> for the entire day.
                   </p>
                </div>
              </div>
@@ -337,10 +370,10 @@ const CashQuest2026 = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
           {/* SECTION 6: REPORTING SYSTEM */}
           <AnimatedSection direction="left">
-            <RuleCard title="06. Reporting System" icon={FileText} className="h-full">
-              <p className="mb-6 text-foreground font-bold">Each CR must submit a daily report including:</p>
+            <RuleCard title="06. Submission & Reporting" icon={FileText} className="h-full">
+              <p className="mb-6 text-foreground font-bold italic">Daily submission deadline is 8:00 PM. Late submissions will not be considered.</p>
               <ul className="space-y-3 mb-8">
-                {["Reel/Post links", "Story screenshots", "Engagement insights (views/likes/shares)", "Follower count (before vs after)"].map(item => (
+                {["Submit Reel and Post links", "Provide Story screenshots", "Engagement insights (views/likes/shares)", "Follower count (Before & After screenshot)"].map(item => (
                   <li key={item} className="flex items-center gap-3 text-sm">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                     {item}
@@ -348,8 +381,8 @@ const CashQuest2026 = () => {
                 ))}
               </ul>
               <div className="bg-gray-50 p-4 rounded-xl border border-border">
-                <p className="text-[10px] font-black uppercase text-gray-400 mb-1 tracking-widest">Official Channel</p>
-                <p className="text-xs font-bold text-foreground">Official Link / WhatsApp Group (by 8 PM)</p>
+                <p className="text-[10px] font-black uppercase text-gray-400 mb-1 tracking-widest">Important</p>
+                <p className="text-xs font-bold text-foreground">Participation is mandatory each day for leaderboard eligibility. Incomplete submissions will not be considered.</p>
               </div>
             </RuleCard>
           </AnimatedSection>
@@ -370,6 +403,7 @@ const CashQuest2026 = () => {
                   </li>
                 ))}
               </ul>
+              <p className="mt-6 text-[10px] font-black uppercase text-gray-400">Scores once published will be considered final.</p>
             </RuleCard>
           </AnimatedSection>
         </div>
@@ -381,20 +415,20 @@ const CashQuest2026 = () => {
             <div className="p-10 bg-white border border-border rounded-[2.5rem]">
               <div className="text-primary text-4xl mb-6 flex justify-center"><Star /></div>
               <h4 className="text-xs font-black uppercase tracking-widest text-gray-400 mb-2">Daily</h4>
-              <h3 className="text-xl font-black uppercase text-foreground">Top 3 CRs Featured</h3>
-              <p className="text-xs text-gray-500 mt-4 font-medium italic">Broadcasted on official stories</p>
+              <h3 className="text-xl font-black uppercase text-foreground">Top Performers Featured</h3>
+              <p className="text-xs text-gray-500 mt-4 font-medium italic">Broadcasted on official Prayogam platforms</p>
             </div>
             <div className="p-10 bg-white border border-border rounded-[3rem] shadow-glow border-primary/20 scale-105 relative z-10">
               <div className="text-primary text-5xl mb-6 flex justify-center"><Trophy /></div>
-              <h4 className="text-xs font-black uppercase tracking-widest text-gray-400 mb-2">Grand Final</h4>
-              <h3 className="text-2xl font-black uppercase text-foreground">On-Stage Victory</h3>
-              <p className="text-xs text-gray-500 mt-4 font-medium leading-relaxed">Free Prayogam Passes + Goodies <br/> + Certificates + Wildcards</p>
+              <h4 className="text-xs font-black uppercase tracking-widest text-gray-400 mb-2">Final Winners</h4>
+              <h3 className="text-2xl font-black uppercase text-foreground">On-Stage Recognition</h3>
+              <p className="text-xs text-gray-500 mt-4 font-medium leading-relaxed">Free Prayogam passes + Goods <br/> + Certificates + Wildcard passes</p>
             </div>
             <div className="p-10 bg-white border border-border rounded-[2.5rem]">
               <div className="text-primary text-4xl mb-6 flex justify-center"><CheckCircle /></div>
-              <h4 className="text-xs font-black uppercase tracking-widest text-gray-400 mb-2">Weekly</h4>
-              <h3 className="text-xl font-black uppercase text-foreground">Achievement Certs</h3>
-              <p className="text-xs text-gray-500 mt-4 font-medium italic">Official platform recognition</p>
+              <h4 className="text-xs font-black uppercase tracking-widest text-gray-400 mb-2">Exclusive</h4>
+              <h3 className="text-xl font-black uppercase text-foreground">Networking Access</h3>
+              <p className="text-xs text-gray-500 mt-4 font-medium italic">Priority entry and Certificates</p>
             </div>
           </div>
         </AnimatedSection>
@@ -406,12 +440,12 @@ const CashQuest2026 = () => {
               <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[100px] rounded-full" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 relative z-10">
                  {[
-                   { label: "Fake Growth", desc: "Fake followers/likes lead to immediate disqualification", icon: XCircle },
-                   { label: "Late Submission", desc: "After 8 PM results in zero points for the day", icon: Clock },
-                   { label: "System Violation", desc: "Missing hashtags or official tags applied as penalties", icon: AlertTriangle },
-                   { label: "Duplicate Work", desc: "Reposting identical content will not be counted", icon: FileText },
-                   { label: "Quality Check", desc: "Inappropriate or low-effort content will be rejected", icon: Zap },
-                   { label: "Anti-Cheat", desc: "Bots/engagement pods results in instant DQ", icon: Shield }
+                   { label: "Compliance", desc: "Strict compliance is mandatory. Failure to participate leads to disqualification.", icon: Shield },
+                   { label: "Fake Growth", desc: "Fake followers, bots, or paid engagement results in immediate disqualification.", icon: XCircle },
+                   { label: "Late Submission", desc: "After 8:00 PM results in zero points for the day. NO exceptions.", icon: Clock },
+                   { label: "Duplicate Work", desc: "Duplicate or low-effort content will be rejected after manual audit.", icon: FileText },
+                   { label: "Tags & Hashtags", desc: "Missing required tags or hashtags may result in heavy point penalties.", icon: AlertTriangle },
+                   { label: "Single Account", desc: "Use of multiple accounts for engagement manipulation is strictly prohibited.", icon: Zap }
                  ].map((rule, i) => (
                    <div key={i} className="flex gap-4">
                       <rule.icon className="text-primary shrink-0" size={24} />
@@ -423,26 +457,26 @@ const CashQuest2026 = () => {
                  ))}
               </div>
               <div className="mt-16 pt-10 border-t border-white/10 text-center">
-                 <p className="text-xs font-black uppercase tracking-[0.4em] text-primary italic">Anti-Cheat Policy strictly enforced</p>
+                 <p className="text-xs font-black uppercase tracking-[0.4em] text-primary italic">Anti-Cheat Policy strictly enforced by iNCENT Core Team</p>
               </div>
-           </div>
-        </AnimatedSection>
+            </div>
+         </AnimatedSection>
 
-        {/* SECTIONS 10-13: POLICIES */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-32">
-           {[
-             { num: "10", title: "Verification", text: "All submissions undergo manual verification with random audits. Core Team reserves scoring rights.", icon: FileText },
-             { num: "11", title: "Fair Play", text: "Maintain ethical competition. Manipulative behavior results in permanent flagging.", icon: Scale },
-             { num: "12", title: "Structure", text: "Compete as a unit. Performance contributes to individual and class leaderboards.", icon: Users },
-             { num: "13", title: "Authority", text: "iNCENT Core Team decisions are final regarding all rules and evaluation criteria.", icon: Gavel }
-           ].map((policy, i) => (
-             <div key={i} className="bg-white border border-border p-8 rounded-3xl group hover:border-primary/20 transition-all">
-                <div className="text-[10px] font-black text-gray-300 mb-4 group-hover:text-primary transition-colors">POLICY {policy.num}</div>
-                <h4 className="font-black uppercase tracking-tight text-foreground mb-4">{policy.title}</h4>
-                <p className="text-xs text-gray-500 font-medium leading-relaxed">{policy.text}</p>
-             </div>
-           ))}
-        </div>
+         {/* SECTIONS 10-13: POLICIES */}
+         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-32">
+            {[
+              { num: "10", title: "Verification", text: "All submissions undergo manual verification with random audits. Core Team reserves rights to request additional proof.", icon: FileText },
+              { num: "11", title: "Fair Play", text: "Maintain ethical and respectful competition. Focus on originality and genuine engagement. Cheating results in permanent ban.", icon: Scale },
+              { num: "12", title: "Adjustments", text: "Organizing team reserves the right to modify rules or scoring structure to ensure fairness during execution.", icon: Users },
+              { num: "13", title: "Final Authority", text: "All decisions made by the iNCENT Core Team regarding evaluation and rankings will be final and binding.", icon: Gavel }
+            ].map((policy, i) => (
+              <div key={i} className="bg-white border border-border p-8 rounded-3xl group hover:border-primary/20 transition-all">
+                 <div className="text-[10px] font-black text-gray-300 mb-4 group-hover:text-primary transition-colors">POLICY {policy.num}</div>
+                 <h4 className="font-black uppercase tracking-tight text-foreground mb-4">{policy.title}</h4>
+                 <p className="text-xs text-gray-500 font-medium leading-relaxed">{policy.text}</p>
+              </div>
+            ))}
+         </div>
 
         {/* FINAL FOOTER */}
         <AnimatedSection direction="up" className="text-center pb-24">

@@ -1,200 +1,258 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { REGISTRATION_LINK } from '../constants';
-import { Link } from 'react-router-dom';
+import { Trophy, ArrowRight, Zap, Sparkles, TrendingUp, Filter } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import AnimatedSection from '../components/animations/AnimatedSection';
 import AnimatedText from '../components/animations/AnimatedText';
-
-const formatUrl = (title) => title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
-
-const EventCard = ({ event, index }) => {
-  return (
-    <AnimatedSection direction={index % 2 === 0 ? "left" : "right"} delay={(index % 3) * 0.1}>
-      <motion.div 
-        layout
-        className="group bg-white border border-border rounded-[2.5rem] overflow-hidden hover:border-primary/50 hover:-translate-y-2 transition-all duration-300 flex flex-col h-full shadow-sm"
-      >
-      <div className="relative h-60 bg-foreground overflow-hidden">
-        <div className="absolute inset-0 bg-transparent group-hover:bg-primary/20 transition-colors z-10 pointer-events-none duration-500" />
-        <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-3xl rounded-full" />
-        <img 
-          src={event.image || `https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?q=80&w=1000&auto=format&fit=crop`} 
-          alt={event.title}
-          loading="lazy"
-          className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
-        />
-        <div className="absolute top-5 left-5 z-20 flex flex-col gap-2">
-          <div className="bg-primary text-white text-[10px] font-bold tracking-widest uppercase px-4 py-1.5 rounded-full shadow-lg self-start">
-            {event.category}
-          </div>
-          {event.isFun && (
-            <div className="bg-black text-white text-[10px] font-bold tracking-widest uppercase px-4 py-1.5 rounded-full shadow-lg self-start">
-              Open for All
-            </div>
-          )}
-        </div>
-      </div>
-      
-      <div className="p-8 md:p-10 flex flex-col flex-1">
-        <div className="mb-6">
-          <h3 className="text-2xl md:text-3xl font-black text-foreground mb-1 leading-tight group-hover:text-primary transition-colors">{event.title}</h3>
-          {event.subtitle && (
-            <p className="text-primary font-black text-xs uppercase tracking-[0.2em] italic mb-4">{event.subtitle}</p>
-          )}
-        </div>
-
-        <p className="text-gray-600 font-medium mb-8 flex-1 leading-relaxed text-sm">
-          {event.description}
-        </p>
-
-        {(event.recognition || event.rewards) && (
-          <div className="space-y-6 mb-8 pt-6 border-t border-border/50">
-            {event.recognition && (
-              <div>
-                <span className="text-[10px] font-black uppercase tracking-widest text-primary block mb-2">Recognition</span>
-                <p className="text-xs text-foreground font-bold leading-relaxed">{event.recognition}</p>
-              </div>
-            )}
-            {event.rewards && (
-              <div>
-                <span className="text-[10px] font-black uppercase tracking-widest text-primary block mb-2">Rewards</span>
-                <p className="text-xs text-foreground font-bold leading-relaxed">{event.rewards}</p>
-              </div>
-            )}
-          </div>
-        )}
-        
-        <div className="mt-auto space-y-4">
-          <div className="flex flex-col gap-2">
-            <div className="inline-block bg-gray-50 text-gray-500 text-[10px] font-bold px-3 py-1.5 rounded-md uppercase tracking-wide self-start border border-border/50">
-              Free with Pass
-            </div>
-          </div>
-          <Link to={`/events/${formatUrl(event.title)}`} className="w-full bg-background border border-border text-foreground font-black py-4 rounded-2xl group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 flex justify-center items-center gap-2 text-xs uppercase tracking-widest shadow-sm">
-            View Details <span className="group-hover:translate-x-1 transition-transform">→</span>
-          </Link>
-        </div>
-      </div>
-      </motion.div>
-    </AnimatedSection>
-  );
-};
+import { REGISTRATION_LINK } from '../constants';
 
 const Events = () => {
+  const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState('All');
+
+  const filters = ['All', 'Innovation', 'Content', 'Marketing'];
 
   const allEvents = [
     {
-      title: "Exhibition — Phase 1",
+      title: "Exhibition Day 1",
+      slug: "exhibition-day-1",
       category: "Innovation",
-      description: "Initial showcase of student-built projects and working prototypes. Participants present their ideas, system flow, and implementation.",
-      image: null
+      subtitle: "Initial Showcase",
+      description: "Initial phase of the project exhibition where participants present their systems, ideas, and working prototypes.",
+      isFeatured: true
     },
     {
-      title: "Exhibition — Phase 2",
+      title: "Exhibition Day 2",
+      slug: "exhibition-day-2",
       category: "Innovation",
-      description: "Shortlisted projects move forward for deeper evaluation and mentor interaction. Focus on clarity, working model, and improvements.",
-      image: null
+      subtitle: "Advanced Showcase",
+      description: "Advanced showcase with deeper evaluation, mentor interaction, and refinement of project presentations.",
+      isFeatured: true
     },
     {
-      title: "The Grand Finale",
+      title: "Grand Finale",
+      slug: "exhibition-day-3",
       category: "Innovation",
-      description: "Final presentation of selected projects in front of experts and evaluators. Only the strongest solutions are recognized.",
-      image: null
+      subtitle: "The Grand Finale",
+      description: "Final stage where shortlisted projects are presented before experts and evaluated for top recognition.",
+      isFeatured: true
     },
     {
-      title: "Cash Quest 2k26",
+      title: "CASH QUEST 2K26",
+      slug: "cash-quest-2k26",
       category: "Marketing",
-      subtitle: "The Ultimate CR System",
-      description: "A premium, gamified class representative competition where performance, creativity, and reach lead to massive recognition.",
-      recognition: "Daily Top 3 + Final Stage Recognition + Official Features",
-      rewards: "Wildcard Pass + Tech Swag + Exclusive Networking + Certificates",
-      image: null
+      subtitle: "The Ultimate Promotion Challenge",
+      description: "A competitive challenge where participants build influence and personal brands through consistent creativity, reach, and Prayogam 2k26 promotion.",
     },
     {
-      title: "Reel Competition",
+      title: "REELS MAKING COMPETITION 2K26",
+      slug: "reel-competition",
       category: "Content",
-      subtitle: "Top Creators",
-      description: "Create reels based on Prayogam, your project, or event moments. Top creators get featured.",
-      recognition: "Top 3 Post + Story + Highlight + Announcement",
-      rewards: "Certificate + Goodies + Wildcard Pass + Networking Access",
-      image: null
+      subtitle: "3-Day Creator Challenge",
+      description: "A content-driven challenge where participants create reels showcasing creativity, storytelling, and Prayogam 2k26 promotion across 3 days.",
     },
     {
-      title: "Influencer Clash",
+      title: "INFLUENCER CLASH 2K26",
+      slug: "influencer-clash",
       category: "Content",
-      subtitle: "Top Influencer",
-      description: "Compete to become the most impactful voice during Prayogam through consistent content.",
-      recognition: "Post + Story + Highlight + Announcement",
-      rewards: "Certificate + Wildcard Pass",
-      image: null
+      subtitle: "The Ultimate Influencer Challenge",
+      description: "A competitive challenge where participants build influence and personal brands through consistent creativity, reach, and Prayogam 2k26 promotion.",
+    },
+    {
+      title: "QR HUNT 2K26",
+      slug: "qr-hunt-2k26",
+      category: "Marketing/Game",
+      subtitle: "Campus-Wide Gamified Experience",
+      description: "A real-world interactive campus hunt where participants scan QR codes, decode secrets, and race against time to submit winning triggers.",
+    },
+    {
+      title: "THE MONEY SHOT 2K26",
+      slug: "money-shot-game",
+      category: "Content",
+      subtitle: "The Ultimate Photography Challenge",
+      description: "A high-energy precision photography competition where participants capture impactful moments aligned with daily themes and storytelling.",
     }
   ];
 
-  const categories = ['All', ...new Set(allEvents.map(e => e.category))];
+  // Map internal categories to UI filters
+  const getDisplayCategory = (dataCat) => {
+    if (dataCat === 'Marketing/Game') return 'Marketing';
+    return dataCat;
+  };
 
-  const filteredEvents = activeFilter === 'All' 
-    ? allEvents 
-    : allEvents.filter(e => e.category === activeFilter);
+  const filteredEvents = allEvents.filter(event => {
+    if (activeFilter === 'All') return true;
+    return getDisplayCategory(event.category) === activeFilter;
+  });
+
+  const featuredEvents = filteredEvents.filter(e => e.isFeatured);
+  const otherEvents = filteredEvents.filter(e => !e.isFeatured);
 
   return (
-    <div className="min-h-screen py-12">
-      
-      {/* PAGE HEADER */}
-      <div className="text-center mb-16">
-        <AnimatedText text="TECHNICAL EXHIBITIONS" el="h1" className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter mb-4 uppercase" />
-        <AnimatedSection direction="up" delay={0.2}>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-medium uppercase tracking-widest italic">
-            "Explore all activities designed to test, present, and evaluate your skills."
-          </p>
-        </AnimatedSection>
-      </div>
-
-      <AnimatedSection 
-        direction="up" 
-        delay={0.3}
-        className="max-w-4xl mx-auto mb-16 bg-red-50/50 border border-primary/20 p-8 rounded-3xl text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6"
-      >
-        <div>
-          <h3 className="font-black text-xl text-primary uppercase tracking-tight mb-1">Registration Access</h3>
-          <p className="text-foreground font-medium text-sm">
-            To participate in these activities, you must complete your <span className="font-bold text-primary italic uppercase">event registration through the Transaction File Pass</span> and secure your access.
-            <br />
-            <span className="text-[10px] text-gray-500 uppercase tracking-widest mt-2 block">Only participants with a valid Transaction File Pass will be allowed to take part.</span>
-          </p>
-        </div>
-        <a href={REGISTRATION_LINK} target="_blank" rel="noopener noreferrer" className="shrink-0 block w-full sm:w-auto text-center bg-primary text-white font-bold py-4 px-10 rounded-full shadow-glow hover:bg-black transition-all uppercase tracking-widest text-sm">
-          Secure Your Pass
-        </a>
-      </AnimatedSection>
-
-      <div className="flex flex-wrap justify-center gap-2 mb-20 max-w-4xl mx-auto">
-        {categories.map((category) => (
-          <button
-            key={category}
-            onClick={() => setActiveFilter(category)}
-            className={`px-6 py-2.5 rounded-full font-bold text-xs tracking-widest uppercase transition-all duration-300 ${
-              activeFilter === category 
-                ? 'bg-foreground text-background shadow-lg scale-105' 
-                : 'bg-white border text-gray-400 hover:border-foreground hover:text-foreground'
-            }`}
+    <div className="min-h-screen py-16 bg-white text-black">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        {/* HERO SECTION */}
+        <header className="mb-20 text-center flex flex-col items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-6 relative"
           >
-            {category}
-          </button>
-        ))}
-      </div>
+            <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-48 h-48 bg-primary/5 blur-[100px] rounded-full pointer-events-none" />
+            <h1 className="text-7xl md:text-9xl font-black tracking-tighter uppercase leading-none text-black relative z-10">
+              EVENTS
+            </h1>
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed font-bold uppercase tracking-widest italic mb-8"
+          >
+            Explore all structured activities, competitions, and showcases of Prayogam 2k26.
+          </motion.p>
+          <div className="w-20 h-1.5 bg-primary shadow-glow mb-4" />
+        </header>
 
-      <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-24">
-        <AnimatePresence mode="popLayout">
-          {filteredEvents.map((event, index) => (
-            <EventCard key={event.title} event={event} index={index} />
+        {/* CATEGORY FILTER BAR */}
+        <div className="flex items-center justify-start md:justify-center gap-10 mb-16 border-b border-gray-100 overflow-x-auto no-scrollbar pb-1">
+          {filters.map((filter) => (
+            <button
+              key={filter}
+              onClick={() => setActiveFilter(filter)}
+              className="relative py-4 text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap"
+            >
+              <span className={activeFilter === filter ? 'text-black' : 'text-gray-400 hover:text-black'}>
+                {filter}
+              </span>
+              {activeFilter === filter && (
+                <motion.div 
+                  layoutId="activeFilter"
+                  className="absolute bottom-0 left-0 w-full h-0.5 bg-primary" 
+                />
+              )}
+            </button>
           ))}
-        </AnimatePresence>
-      </motion.div>
+        </div>
 
+        {/* FEATURED SECTION */}
+        {featuredEvents.length > 0 && (
+          <section className="mb-24">
+            <div className="flex items-center gap-4 mb-10">
+              <span className="w-8 h-1 bg-primary" />
+              <h2 className="text-sm font-black uppercase tracking-[0.4em] text-primary italic">Featured Showcases</h2>
+            </div>
+            <div className="space-y-6">
+              {featuredEvents.map((event) => (
+                <FeaturedCard key={event.slug} event={event} onClick={() => navigate(`/events/${event.slug}`)} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* OTHER EVENTS SECTION */}
+        {otherEvents.length > 0 && (
+          <section>
+            <div className="flex items-center gap-4 mb-10">
+              <span className="w-8 h-1 bg-primary" />
+              <h2 className="text-sm font-black uppercase tracking-[0.4em] text-primary italic">Competitions & Activities</h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {otherEvents.map((event) => (
+                <EventCard key={event.slug} event={event} onClick={() => navigate(`/events/${event.slug}`)} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* EMPTY STATE */}
+        {filteredEvents.length === 0 && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center py-32 border border-dashed border-gray-200 rounded-3xl"
+          >
+            <p className="text-gray-400 font-bold uppercase tracking-widest text-xs">No events found in this category</p>
+          </motion.div>
+        )}
+
+      </div>
     </div>
   );
 };
 
+/* --- COMPONENTS --- */
+
+const FeaturedCard = ({ event, onClick }) => (
+  <motion.div
+    whileHover={{ scale: 1.01 }}
+    onClick={onClick}
+    className="group flex flex-col md:flex-row bg-white border border-gray-100 rounded-[2rem] h-full md:h-80 cursor-pointer overflow-hidden transition-all duration-300 hover:border-primary/30"
+  >
+    {/* Left: Visual Area (Placeholder for Image) */}
+    <div className="md:w-5/12 bg-gray-50 relative flex items-center justify-center p-12 overflow-hidden border-b md:border-b-0 md:border-r border-gray-100">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent mix-blend-overlay" />
+      <Sparkles className="text-primary/10 group-hover:scale-110 transition-transform duration-500" size={140} />
+      <div className="absolute top-6 left-6">
+        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary bg-primary/5 px-4 py-1.5 rounded-full inline-block shadow-sm border border-primary/10 backdrop-blur-sm">
+          {event.category}
+        </span>
+      </div>
+    </div>
+
+    {/* Right: Content Area */}
+    <div className="flex-1 p-10 md:p-14 flex flex-col justify-center">
+      <h3 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-4 group-hover:text-primary transition-colors leading-[0.9]">
+        {event.title}
+      </h3>
+      <p className="text-gray-500 font-medium text-sm md:text-base leading-relaxed mb-8 max-w-lg">
+        {event.description}
+      </p>
+      <button className="self-start flex items-center gap-3 bg-foreground text-white px-8 py-4 rounded-full hover:bg-primary transition-all font-black uppercase tracking-[0.2em] text-[10px] overflow-hidden group/btn relative mt-2">
+        <span className="relative z-10">View Details</span>
+        <ArrowRight size={14} className="relative z-10 group-hover/btn:translate-x-2 transition-transform" />
+      </button>
+    </div>
+  </motion.div>
+);
+
+const EventCard = ({ event, onClick }) => (
+  <motion.div
+    whileHover={{ scale: 1.02 }}
+    onClick={onClick}
+    className="group bg-white border border-gray-100 p-10 rounded-[2rem] cursor-pointer transition-all duration-300 hover:border-primary flex flex-col h-full overflow-hidden"
+  >
+    <div className="mb-8">
+      <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary bg-primary/5 px-4 py-1.5 rounded-full inline-block shadow-sm border border-primary/10">
+        {event.category}
+      </span>
+    </div>
+
+    <h3 className="text-2xl font-black uppercase tracking-tighter mb-4 leading-none">
+      {event.title}
+    </h3>
+
+    <p className="text-gray-400 text-xs font-medium leading-relaxed mb-10 overflow-hidden line-clamp-3">
+      {event.description}
+    </p>
+
+    <div className="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between gap-2">
+      <a 
+        onClick={(e) => e.stopPropagation()}
+        href={REGISTRATION_LINK} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="flex-1 text-center bg-transparent border border-gray-200 text-gray-500 px-3 md:px-5 py-3 rounded-full hover:border-primary hover:text-primary transition-all font-black uppercase tracking-[0.2em] text-[10px]"
+      >
+        Register
+      </a>
+      <button className="flex-1 flex items-center justify-center gap-2 bg-foreground text-white px-3 md:px-5 py-3 rounded-full hover:bg-primary transition-all font-black uppercase tracking-[0.2em] text-[10px] group/btn">
+        <span className="relative z-10">Details</span>
+        <ArrowRight size={14} className="relative z-10 group-hover/btn:translate-x-1 transition-transform" />
+      </button>
+    </div>
+  </motion.div>
+);
 
 export default Events;

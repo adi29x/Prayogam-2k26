@@ -86,49 +86,7 @@ const Contact = () => {
             </div>
           </AnimatedSection>
 
-          <AnimatedSection direction="up" delay={0.2} className="p-8 md:p-12 bg-white border border-border rounded-[2.5rem]">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-black uppercase tracking-tight mb-2">Contact Departments</h2>
-              <p className="text-gray-500 font-medium">Reach out to the right team for quick support.</p>
-              <div className="w-12 h-1 bg-primary mx-auto mt-4" />
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                { 
-                  dept: "Tech Support", 
-                  name: "Vikas Jangid", 
-                  email: "2025ecsvikas23976@poornima.edu.in" 
-                },
-                { 
-                  dept: "Registrations & Pass Access", 
-                  name: "Piyush Agar", 
-                  email: "2024btechaidspiyush19641@poornima.edu.in" 
-                },
-                { 
-                  dept: "Sponsorship & Partnerships", 
-                  name: "Aman Nehra", 
-                  email: "2025btechaidsaman20789@poornima.edu.in" 
-                }
-              ].map((item, i) => (
-                <div 
-                  key={i} 
-                  className="bg-white border border-border p-6 rounded-2xl flex flex-col hover:border-primary transition-colors duration-300"
-                >
-                  <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-3">
-                    {item.dept}
-                  </span>
-                  <h3 className="text-lg font-bold text-foreground mb-1">{item.name}</h3>
-                  <a 
-                    href={`mailto:${item.email}`} 
-                    className="text-xs text-gray-500 hover:text-primary transition-colors truncate block"
-                  >
-                    {item.email}
-                  </a>
-                </div>
-              ))}
-            </div>
-          </AnimatedSection>
+
         </div>
 
       </div>

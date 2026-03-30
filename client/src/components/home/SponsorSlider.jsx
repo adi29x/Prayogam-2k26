@@ -2,14 +2,11 @@ import React from 'react';
 
 const SponsorSlider = () => {
   const sponsors = [
-    { name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
-    { name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" },
-    { name: "Amazon", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
-    { name: "Meta", logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" },
-    { name: "Apple", logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" },
-    { name: "Adobe", logo: "https://upload.wikimedia.org/wikipedia/commons/8/8d/Adobe_Corporate_Logo.svg" },
-    { name: "Tesla", logo: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Tesla_logo.png" },
-    { name: "Nvidia", logo: "https://upload.wikimedia.org/wikipedia/commons/2/21/Nvidia_logo.svg" },
+    { name: "To be announced soon", logo: null },
+    { name: "To be announced soon", logo: null },
+    { name: "To be announced soon", logo: null },
+    { name: "To be announced soon", logo: null },
+    { name: "To be announced soon", logo: null },
   ];
 
   const duplicatedSponsors = [...sponsors, ...sponsors];
@@ -42,12 +39,9 @@ const SponsorSlider = () => {
               key={index} 
               className="flex items-center justify-center px-12 md:px-20 select-none group shrink-0"
             >
-              <img 
-                src={sponsor.logo} 
-                alt={sponsor.name} 
-                className="h-8 md:h-12 w-auto grayscale transition-all duration-500 group-hover:grayscale-0 opacity-40 group-hover:opacity-100 object-contain"
-                loading="lazy"
-              />
+              <h4 className="text-2xl md:text-4xl font-black uppercase tracking-tighter text-gray-300 opacity-60 hover:text-primary hover:opacity-100 transition-colors duration-500">
+                To be announced soon
+              </h4>
             </div>
           ))}
         </div>

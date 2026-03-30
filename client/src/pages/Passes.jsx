@@ -52,14 +52,14 @@ const Passes = () => {
     {
       title: "Black Ledger Pass",
       description: "Reserved access for invited guests, keynote speakers, sponsors, and authorities.",
-      benefits: ["VIP seating and lounge access", "Access to special sessions and interactions", "Reserved entry across key areas", "Official identification badge"],
+      benefits: ["VIP seating and lounge access", "Access to special sessions and interactions", "Reserved entry across key areas"],
       icon: Crown,
       badge: "VIP"
     },
     {
       title: "Transaction File Pass",
       description: "The primary access required for all participants. This pass is mandatory to participate in all events, enter competitions, and access exhibition zones.",
-      benefits: ["Entry to all competitions", "Access to technical exhibitions", "Participation certificate", "Official event kit"],
+      benefits: ["Entry to all competitions", "Access to technical exhibitions", "Participation certificate"],
       icon: Ticket,
       highlight: true,
       badge: "GENERAL"

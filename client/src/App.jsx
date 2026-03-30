@@ -20,12 +20,22 @@ const ContactSponsors = lazy(() => import('./pages/ContactSponsors'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Announcements = lazy(() => import('./pages/Announcements'));
 const Prizes = lazy(() => import('./pages/Prizes'));
-const Leaderboard = lazy(() => import('./pages/Leaderboard'));
+const LeaderboardPage = lazy(() => import('./pages/Leaderboard'));
+
+// Event Detail Pages
 const CashQuestEventPage = lazy(() => import('./pages/events/CashQuest2026'));
-const CashQuest2026 = lazy(() => import('./pages/leaderboard/CashQuest2026'));
-const InfluencerClash = lazy(() => import('./pages/leaderboard/InfluencerClash'));
-const ReelCompetition = lazy(() => import('./pages/leaderboard/ReelCompetition'));
-const ProjectSelections = lazy(() => import('./pages/leaderboard/ProjectSelections'));
+const InfluencerClashEventPage = lazy(() => import('./pages/events/InfluencerClash'));
+const QRHuntEventPage = lazy(() => import('./pages/events/QRHunt'));
+const ReelCompetitionEventPage = lazy(() => import('./pages/events/ReelCompetition'));
+const MoneyShotEventPage = lazy(() => import('./pages/events/MoneyShotGame'));
+
+// Leaderboard Pages
+const CashQuestLeaderboard = lazy(() => import('./pages/leaderboard/CashQuest2026'));
+const InfluencerClashLeaderboard = lazy(() => import('./pages/leaderboard/InfluencerClash'));
+const ReelCompetitionLeaderboard = lazy(() => import('./pages/leaderboard/ReelCompetition'));
+const QRHuntLeaderboard = lazy(() => import('./pages/leaderboard/QRHunt'));
+const MoneyShotLeaderboard = lazy(() => import('./pages/leaderboard/MoneyShotGame'));
+const ProjectSelectionsLeaderboard = lazy(() => import('./pages/leaderboard/ProjectSelections'));
 
 const PageWrapper = ({ children }) => {
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
@@ -77,8 +87,17 @@ function App() {
             <Routes location={location} key={location.pathname}>
               <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
               <Route path="/events" element={<PageWrapper><Events /></PageWrapper>} />
+              
+              {/* Specialized Event Pages */}
               <Route path="/events/cash-quest-2k26" element={<PageWrapper><CashQuestEventPage /></PageWrapper>} />
+              <Route path="/events/influencer-clash" element={<PageWrapper><InfluencerClashEventPage /></PageWrapper>} />
+              <Route path="/events/qr-hunt-2k26" element={<PageWrapper><QRHuntEventPage /></PageWrapper>} />
+              <Route path="/events/reel-competition" element={<PageWrapper><ReelCompetitionEventPage /></PageWrapper>} />
+              <Route path="/events/money-shot-game" element={<PageWrapper><MoneyShotEventPage /></PageWrapper>} />
+              
+              {/* Generic Event Page */}
               <Route path="/events/:eventName" element={<PageWrapper><EventDetail /></PageWrapper>} />
+              
               <Route path="/passes" element={<PageWrapper><Passes /></PageWrapper>} />
               <Route path="/team" element={<PageWrapper><Team /></PageWrapper>} />
               <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
@@ -86,11 +105,16 @@ function App() {
               <Route path="/sponsors" element={<PageWrapper><Sponsors /></PageWrapper>} />
               <Route path="/contact-sponsors" element={<PageWrapper><ContactSponsors /></PageWrapper>} />
               <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
-              <Route path="/leaderboard" element={<PageWrapper><Leaderboard /></PageWrapper>} />
-              <Route path="/leaderboard/cash-quest-2k26" element={<PageWrapper><CashQuest2026 /></PageWrapper>} />
-              <Route path="/leaderboard/influencer-clash" element={<PageWrapper><InfluencerClash /></PageWrapper>} />
-              <Route path="/leaderboard/reel-competition" element={<PageWrapper><ReelCompetition /></PageWrapper>} />
-              <Route path="/leaderboard/project-selections" element={<PageWrapper><ProjectSelections /></PageWrapper>} />
+              
+              {/* Leaderboard Routes */}
+              <Route path="/leaderboard" element={<PageWrapper><LeaderboardPage /></PageWrapper>} />
+              <Route path="/leaderboard/cash-quest-2k26" element={<PageWrapper><CashQuestLeaderboard /></PageWrapper>} />
+              <Route path="/leaderboard/influencer-clash" element={<PageWrapper><InfluencerClashLeaderboard /></PageWrapper>} />
+              <Route path="/leaderboard/reel-competition" element={<PageWrapper><ReelCompetitionLeaderboard /></PageWrapper>} />
+              <Route path="/leaderboard/qr-hunt-2k26" element={<PageWrapper><QRHuntLeaderboard /></PageWrapper>} />
+              <Route path="/leaderboard/money-shot-game" element={<PageWrapper><MoneyShotLeaderboard /></PageWrapper>} />
+              <Route path="/leaderboard/project-selections" element={<PageWrapper><ProjectSelectionsLeaderboard /></PageWrapper>} />
+              
               <Route path="/announcements" element={<PageWrapper><Announcements /></PageWrapper>} />
               <Route path="/prizes" element={<PageWrapper><Prizes /></PageWrapper>} />
             </Routes>

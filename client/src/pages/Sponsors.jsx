@@ -59,46 +59,46 @@ const Sponsors = () => {
       title: "Title Sponsors",
       size: "large",
       sponsors: [
-        { name: "PU-iNCENT", logo: null },
-        { name: "Department of First Year", logo: null }
+        { name: "To be announced soon", logo: null },
+        { name: "To be announced soon", logo: null }
       ]
     },
     {
       title: "Powered By",
       size: "medium",
       sponsors: [
-        { name: "CO-SPONSOR 1", logo: null },
-        { name: "CO-SPONSOR 2", logo: null },
-        { name: "CO-SPONSOR 3", logo: null }
+        { name: "To be announced soon", logo: null },
+        { name: "To be announced soon", logo: null },
+        { name: "To be announced soon", logo: null }
       ]
     },
     {
       title: "Co-Powered By",
       size: "small",
       sponsors: [
-        { name: "PARTNER 1", logo: null },
-        { name: "PARTNER 2", logo: null },
-        { name: "PARTNER 3", logo: null },
-        { name: "PARTNER 4", logo: null },
-        { name: "PARTNER 5", logo: null }
+        { name: "To be announced soon", logo: null },
+        { name: "To be announced soon", logo: null },
+        { name: "To be announced soon", logo: null },
+        { name: "To be announced soon", logo: null },
+        { name: "To be announced soon", logo: null }
       ]
     },
     {
       title: "Supported By",
       size: "small",
       sponsors: [
-        { name: "Placeholder A", logo: null },
-        { name: "Placeholder B", logo: null },
-        { name: "Placeholder C", logo: null },
-        { name: "Placeholder D", logo: null }
+        { name: "To be announced soon", logo: null },
+        { name: "To be announced soon", logo: null },
+        { name: "To be announced soon", logo: null },
+        { name: "To be announced soon", logo: null }
       ]
     },
     {
       title: "Sponsored By",
       size: "small",
       sponsors: [
-        { name: "Placeholder E", logo: null },
-        { name: "Placeholder F", logo: null }
+        { name: "To be announced soon", logo: null },
+        { name: "To be announced soon", logo: null }
       ]
     }
   ];

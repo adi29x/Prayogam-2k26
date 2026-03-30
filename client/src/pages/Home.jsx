@@ -120,7 +120,7 @@ const Home = () => {
               Secure Your Pass
             </a>
             <a href="/events" className="block text-center bg-white border-2 border-foreground text-foreground px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-50 hover:-translate-y-1 transition-all w-full sm:w-auto">
-              View Projects
+              View Events
             </a>
           </div>
           <p className="text-gray-400 text-[10px] uppercase tracking-[0.2em] mt-5 font-bold sm:mt-4 text-center sm:text-left">The ultimate stage for technical excellence.</p>
@@ -307,9 +307,9 @@ const Home = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { quote: "The exhibition gave us the platform to present our AI prototype to actual users. The feedback was invaluable.", author: "Team Visionary", role: "Winners 2k25" },
-            { quote: "Networking at the project expo landed me my first internship. It's the best platform for tech exposure.", author: "Aman S.", role: "Tech Delegate" },
-            { quote: "Prayogam sets the gold standard for tech exhibitions. The scale and the innovation quality are unmatched.", author: "Shruti P.", role: "Participant" }
+            { quote: "The showcase allowed us to test our AI solution with real users. The insights we gained helped us refine our product significantly.", author: "Aarav Mehta", role: "Champion 2k25" },
+            { quote: "The exposure and connections I built during the expo directly led to my first startup opportunity. It’s more than an event—it’s a launchpad.", author: "Riya Verma", role: "Founder – Nexora Labs" },
+            { quote: "Among all tech events I’ve attended, this stands out for its scale, execution, and the quality of innovation on display.", author: "Kunal Bansal", role: "Participant – Innovation Track" }
           ].map((item, i) => (
             <div key={i} className="bg-gray-50 border border-border p-8 rounded-2xl relative">
               <div className="text-4xl text-gray-300 font-serif absolute top-6 right-6">"</div>

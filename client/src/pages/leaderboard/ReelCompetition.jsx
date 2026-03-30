@@ -7,7 +7,7 @@ const ReelCompetition = () => {
   return (
     <div className="min-h-screen py-12 px-4 md:px-0">
       <div className="text-center mb-16">
-        <AnimatedText text="Reel Competition" spanText="Competition" spanClass="text-primary" el="h1" className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter mb-4 uppercase" />
+        <AnimatedText text="Reel Making Competition 2k26" spanText="Leaderboard" spanClass="text-primary" el="h1" className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter mb-4 uppercase" />
         <AnimatedSection direction="up" delay={0.2}>
           <p className="text-base sm:text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed font-bold uppercase tracking-widest">
             Creative rankings for top Prayogam reels and short-form content.

@@ -88,8 +88,8 @@ const Team = () => {
       {
         category: "OPERATIONS",
         members: [
-          { name: "Dishika Agarwal", role: "Volunteer & Mentor Management Lead", image: "/team/dishika.jpg" },
-          { name: "Sumit Upadhayay", role: "Operations & Logistics Lead", image: "/team/sumit.jpg" }
+          { name: "Ananya Jain", role: "Volunteer & Mentor Management Lead", image: "/@fs/C:/Users/Aditya%20Kapoor/.gemini/antigravity/brain/8871e994-8927-43b8-892f-ece2505e0298/media__1774880022758.jpg" },
+          { name: "Diya Jangid", role: "Operations & Logistics Lead", image: "/@fs/C:/Users/Aditya%20Kapoor/.gemini/antigravity/brain/8871e994-8927-43b8-892f-ece2505e0298/media__1774880033813.jpg" }
         ]
       },
       {
@@ -101,13 +101,14 @@ const Team = () => {
       {
         category: "MANAGEMENT / SUPPORT",
         members: [
-          { name: "Piyush Agar", role: "Registration & Participants Lead", image: "/team/piyush.jpg" },
+          { name: "Nakshtra Saini", role: "Registration & Participants Lead", image: "/@fs/C:/Users/Aditya%20Kapoor/.gemini/antigravity/brain/8871e994-8927-43b8-892f-ece2505e0298/media__1774880054862.jpg" },
           { name: "Aman Nehra", role: "Sponsorship & Partnerships Lead", image: "/team/aman.jpg" },
           { name: "Khushi Sharma", role: "Hospitality & Guest Management Lead", image: "/team/khushi.jpg" },
           { name: "Vishnu Jaiswal", role: "Event Security Lead", image: "/team/vishnu.jpg" }
         ]
       }
-    ]
+    ],
+    facultyTeam: []
   };
 
   return (
@@ -124,19 +125,31 @@ const Team = () => {
           </motion.div>
         </div>
 
-        {/* --- 1. FACULTY TEAM (NEW) --- */}
+        {/* --- 1. FACULTY TEAM --- */}
         <div className="mb-32">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-4 text-foreground">Faculty Team</h2>
             <p className="text-gray-500 max-w-2xl mx-auto">Guiding the vision, structure, and execution of Prayogam 2k26.</p>
           </div>
-          <div className="max-w-4xl mx-auto bg-gray-50/50 border border-border/50 rounded-[2.5rem] p-12 text-center group hover:border-primary/30 transition-all duration-500">
-            <div className="w-16 h-1 bg-primary/20 mx-auto mb-6 group-hover:w-24 group-hover:bg-primary transition-all duration-500" />
-            <p className="text-2xl md:text-3xl font-black text-gray-400 uppercase tracking-tighter italic">
+          
+          {hierarchyData.facultyTeam.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 px-4">
+              {hierarchyData.facultyTeam.map((member, idx) => (
+                <TeamCard 
+                  key={idx} 
+                  name={member.name} 
+                  role={member.role} 
+                  image={member.image} 
+                  size="sm"
+                  delay={idx * 0.05}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="text-center font-black uppercase tracking-[0.3em] text-gray-400 py-12">
               To be announced soon
-            </p>
-            <p className="text-xs text-gray-500 mt-4 uppercase tracking-[0.2em] font-bold">Stay connected for updates</p>
-          </div>
+            </div>
+          )}
         </div>
 
         {/* --- 2. STUDENT ORGANIZING TEAM --- */}

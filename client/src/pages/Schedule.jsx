@@ -119,8 +119,7 @@ const Schedule = () => {
         "Final presentations and pitching",
         "Evaluation by judges and experts",
         "Selection of winners",
-        "Awards and closing ceremony",
-        "Money Mystery Night"
+        "Awards and closing ceremony"
       ],
       summary: "This is the final stage where the best work is recognized."
     }
